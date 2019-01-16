@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Market.Models.Entities
 {
+
     class Category:BaseEntity<int>
     {
         [Required]
