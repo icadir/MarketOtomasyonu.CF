@@ -8,20 +8,28 @@ using System.Threading.Tasks;
 
 namespace Market.DAL
 {
-    public class MyContext:DbContext
+    public class MyContext : DbContext
     {
         public MyContext()
-            :base("name=MarketCon")
+            : base("name=MarketCon")
         {
-            
+
         }
-     public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>()
                    .Property(k => k.KDV)
-                   .HasPrecision(2, 2);
+                   .HasPrecision(4, 2);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.UBPrice)
+                .HasPrecision(10, 2);
+            modelBuilder.Entity<Product>()
+                .Property(x => x.Stock)
+                .HasPrecision(7,0);
         }
+
     }
 }

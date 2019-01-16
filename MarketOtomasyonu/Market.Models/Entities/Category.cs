@@ -15,6 +15,7 @@ namespace Market.Models.Entities
         public string CName { get; set; }
         [Required]
         public decimal KDV { get; set; }
-       
+
+        public virtual ICollection<Product> Products { get; set; } = new HashSet<Product>();
     }
 }
