@@ -15,6 +15,13 @@ namespace Market.DAL
         {
             
         }
-     }
+     public virtual DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>()
+                   .Property(k => k.KDV)
+                   .HasPrecision(2, 2);
+        }
     }
 }

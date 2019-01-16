@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Market.Models.Entities
 {
 
-    class Category:BaseEntity<int>
+  public  class Category:BaseEntity<int>
     {
         [Required]
         public string CName { get; set; }
