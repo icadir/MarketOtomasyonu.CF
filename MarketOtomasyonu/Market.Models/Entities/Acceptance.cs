@@ -11,5 +11,6 @@ namespace Market.Models.Entities
     {
         public DateTime CreateDate { get; set; }
 
+        public virtual ICollection<AcceptanceDetail> AcceptanceDetails { get; set; } = new HashSet<AcceptanceDetail>();
     }
 }

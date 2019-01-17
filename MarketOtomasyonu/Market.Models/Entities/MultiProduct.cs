@@ -1,4 +1,5 @@
 ﻿using Market.Models.Abstracts;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -20,6 +21,8 @@ namespace Market.Models.Entities
         public int UrunId { get; set; }
 
         [ForeignKey("UrunId")]
-        public virtual Product Product { get; set; } 
+        public virtual Product Product { get; set; }
+
+        public virtual ICollection<AcceptanceDetail> AcceptanceDetails { get; set; } = new HashSet<AcceptanceDetail>();
     }
 }
