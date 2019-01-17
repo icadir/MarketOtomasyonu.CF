@@ -17,6 +17,7 @@ namespace Market.DAL
         }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<MultiProduct> MultiProducts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,6 +30,12 @@ namespace Market.DAL
             modelBuilder.Entity<Product>()
                 .Property(x => x.Stock)
                 .HasPrecision(7,0);
+            modelBuilder.Entity<MultiProduct>()
+                .Property(p => p.MPPiece)
+                .HasPrecision(6, 0);
+            modelBuilder.Entity<MultiProduct>()
+                .Property(x => x.MPPrice)
+                .HasPrecision(8, 2);
         }
 
     }
