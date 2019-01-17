@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Market.Models.Entities;
 using System.Data.Entity;
-using Market.Models.Entities;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Market.DAL
 {

@@ -49,6 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AcceptanceRepo.cs" />
+    <Compile Include="Repository\CategoryRepo.cs" />
+    <Compile Include="Repository\MultiProductRepo.cs" />
+    <Compile Include="Repository\ProductRepo.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Market.DAL\Market.DAL.csproj">
