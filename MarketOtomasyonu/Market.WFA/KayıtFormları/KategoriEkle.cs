@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market.WFA
+namespace Market.WFA.KayıtFormları
 {
-    public partial class Form1 : Form
+    public partial class KategoriEkle : Form
     {
-        public Form1()
+        public KategoriEkle()
         {
             InitializeComponent();
+        }
+
+        private void CategoryEkle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
