@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Market.Models.Abstracts
 {
-    class BaseEntity2<T1, T2> : BaseEntity<T1>
+   public class BaseEntity2<T1, T2> : BaseEntity<T1>
     {
 
         [Key]
