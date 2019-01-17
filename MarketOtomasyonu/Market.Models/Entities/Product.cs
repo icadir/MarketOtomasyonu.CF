@@ -10,6 +10,7 @@ namespace Market.Models.Entities
         public string PName { get; set; }
         [Required]
         [Index(IsUnique = true)]
+        [StringLength(5),MinLength(5),MaxLength(5)]
         public string Barkod { get; set; }
         public decimal UBPrice { get; set; }
         public byte[] UPicture { get; set; }

@@ -87,6 +87,7 @@
             this.btnCategoryAdd.TabIndex = 5;
             this.btnCategoryAdd.Text = "Ekle";
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // KategoriEkle
             // 

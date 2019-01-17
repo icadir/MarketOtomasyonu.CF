@@ -140,6 +140,7 @@
             this.btnProductAdd.TabIndex = 9;
             this.btnProductAdd.Text = "Ekle";
             this.btnProductAdd.UseVisualStyleBackColor = true;
+            this.btnProductAdd.Click += new System.EventHandler(this.btnProductAdd_Click);
             // 
             // pProductImage
             // 

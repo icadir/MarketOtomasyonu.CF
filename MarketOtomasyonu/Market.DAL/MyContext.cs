@@ -13,7 +13,7 @@ namespace Market.DAL
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<MultiProduct> MultiProducts { get; set; }
-        public virtual DbSet<Acceptance> Acceptances { get; set }
+        public virtual DbSet<Acceptance> Acceptances { get; set; }
         public virtual DbSet<AcceptanceDetail> AcceptanceDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

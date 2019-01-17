@@ -9,6 +9,7 @@ namespace Market.Models.Entities
     {
         [Index("IX_MPUQ",IsUnique =true)]
         [Required]
+        [StringLength(11), MinLength(11), MaxLength(11)]
         public string MPBarkod { get; set; }
         [Required]
         public decimal MPPiece { get; set; }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Market.BLL.Repository;
+using Market.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,16 @@ namespace Market.WFA.KayıtFormları
         private void CategoryEkle_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCategoryAdd_Click(object sender, EventArgs e)
+        {
+            new CategoryRepo().Insert(new Category
+            {
+                CName = txtCategoryName.Text,
+                KDV = nuKDV.Value,  
+                
+            });
         }
     }
 }
