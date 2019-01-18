@@ -41,8 +41,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.richExplanation = new System.Windows.Forms.RichTextBox();
             this.btnMultiAdd = new System.Windows.Forms.Button();
+            this.MultiProductPicture = new System.Windows.Forms.PictureBox();
+            this.btnPictureSelect = new System.Windows.Forms.Button();
+            this.openPictureDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.nuPiece)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MultiProductPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -194,12 +198,39 @@
             this.btnMultiAdd.TabIndex = 12;
             this.btnMultiAdd.Text = "Kaydet";
             this.btnMultiAdd.UseVisualStyleBackColor = true;
+            this.btnMultiAdd.Click += new System.EventHandler(this.btnMultiAdd_Click);
+            // 
+            // MultiProductPicture
+            // 
+            this.MultiProductPicture.Location = new System.Drawing.Point(330, 30);
+            this.MultiProductPicture.Name = "MultiProductPicture";
+            this.MultiProductPicture.Size = new System.Drawing.Size(157, 134);
+            this.MultiProductPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MultiProductPicture.TabIndex = 13;
+            this.MultiProductPicture.TabStop = false;
+            // 
+            // btnPictureSelect
+            // 
+            this.btnPictureSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPictureSelect.Location = new System.Drawing.Point(329, 199);
+            this.btnPictureSelect.Name = "btnPictureSelect";
+            this.btnPictureSelect.Size = new System.Drawing.Size(158, 52);
+            this.btnPictureSelect.TabIndex = 14;
+            this.btnPictureSelect.Text = "Resim Sec";
+            this.btnPictureSelect.UseVisualStyleBackColor = true;
+            this.btnPictureSelect.Click += new System.EventHandler(this.btnPictureSelect_Click);
+            // 
+            // openPictureDialog
+            // 
+            this.openPictureDialog.FileName = "openFileDialog1";
             // 
             // CokluUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPictureSelect);
+            this.Controls.Add(this.MultiProductPicture);
             this.Controls.Add(this.btnMultiAdd);
             this.Controls.Add(this.richExplanation);
             this.Controls.Add(this.label6);
@@ -218,6 +249,7 @@
             this.Load += new System.EventHandler(this.CokluUrunEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuPiece)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MultiProductPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +270,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richExplanation;
         private System.Windows.Forms.Button btnMultiAdd;
+        private System.Windows.Forms.PictureBox MultiProductPicture;
+        private System.Windows.Forms.Button btnPictureSelect;
+        private System.Windows.Forms.OpenFileDialog openPictureDialog;
     }
 }
