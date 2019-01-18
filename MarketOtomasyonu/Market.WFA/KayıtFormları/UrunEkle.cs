@@ -41,6 +41,7 @@ namespace Market.WFA.KayıtFormları
                     CategoryId = (cmbCategory.SelectedItem as CategoryViewModel).CategoryId,
                 });
                 MessageBox.Show("Urun Eklendi.");
+           
             }
             catch (Exception ex)
             {

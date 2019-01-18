@@ -23,5 +23,8 @@ namespace Market.Models.ViewModels
 
         
         public virtual Category Category { get; set; }
+
+        public override string ToString() => $"{PName}";
+        
     }
 }

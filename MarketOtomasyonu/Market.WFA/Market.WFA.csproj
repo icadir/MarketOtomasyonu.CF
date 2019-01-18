@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KayıtFormları\CokluUrunEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KayıtFormları\CokluUrunEkle.Designer.cs">
+      <DependentUpon>CokluUrunEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="KayıtFormları\KategoriEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="KayıtFormları\CokluUrunEkle.resx">
+      <DependentUpon>CokluUrunEkle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KayıtFormları\KategoriEkle.resx">
       <DependentUpon>KategoriEkle.cs</DependentUpon>
     </EmbeddedResource>

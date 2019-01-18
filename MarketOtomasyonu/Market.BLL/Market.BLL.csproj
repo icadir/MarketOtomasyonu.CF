@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\CategoryHelper.cs" />
+    <Compile Include="Helper\MultiProductHelper.cs" />
+    <Compile Include="Helper\ProductHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AcceptanceRepo.cs" />
     <Compile Include="Repository\CategoryRepo.cs" />

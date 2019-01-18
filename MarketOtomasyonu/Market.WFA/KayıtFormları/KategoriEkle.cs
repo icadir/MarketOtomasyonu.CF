@@ -26,12 +26,21 @@ namespace Market.WFA.KayıtFormları
 
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
-            new CategoryRepo().Insert(new Category
+            try
             {
-                CName = txtCategoryName.Text,
-                KDV = nuKDV.Value,  
-                
-            });
+                new CategoryRepo().Insert(new Category
+                {
+                    CName = txtCategoryName.Text,
+                    KDV = nuKDV.Value,
+
+                });
+                MessageBox.Show("Kategori Kaydedildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }
