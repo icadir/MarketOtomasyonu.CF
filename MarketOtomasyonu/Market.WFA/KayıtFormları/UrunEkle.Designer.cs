@@ -38,6 +38,8 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.btnProductAdd = new System.Windows.Forms.Button();
             this.pProductImage = new System.Windows.Forms.PictureBox();
+            this.btnPictureAdd = new System.Windows.Forms.Button();
+            this.openPictureDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.nuProductPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProductImage)).BeginInit();
             this.SuspendLayout();
@@ -151,11 +153,27 @@
             this.pProductImage.TabIndex = 10;
             this.pProductImage.TabStop = false;
             // 
+            // btnPictureAdd
+            // 
+            this.btnPictureAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPictureAdd.Location = new System.Drawing.Point(353, 162);
+            this.btnPictureAdd.Name = "btnPictureAdd";
+            this.btnPictureAdd.Size = new System.Drawing.Size(145, 40);
+            this.btnPictureAdd.TabIndex = 11;
+            this.btnPictureAdd.Text = "Resim Ekle";
+            this.btnPictureAdd.UseVisualStyleBackColor = true;
+            this.btnPictureAdd.Click += new System.EventHandler(this.btnPictureAdd_Click);
+            // 
+            // openPictureDialog
+            // 
+            this.openPictureDialog.FileName = "openFileDialog1";
+            // 
             // UrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 240);
+            this.ClientSize = new System.Drawing.Size(727, 359);
+            this.Controls.Add(this.btnPictureAdd);
             this.Controls.Add(this.pProductImage);
             this.Controls.Add(this.btnProductAdd);
             this.Controls.Add(this.txtProductName);
@@ -169,6 +187,7 @@
             this.Name = "UrunEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UrunEkle";
+            this.Load += new System.EventHandler(this.UrunEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuProductPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProductImage)).EndInit();
             this.ResumeLayout(false);
@@ -188,5 +207,7 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Button btnProductAdd;
         private System.Windows.Forms.PictureBox pProductImage;
+        private System.Windows.Forms.Button btnPictureAdd;
+        private System.Windows.Forms.OpenFileDialog openPictureDialog;
     }
 }

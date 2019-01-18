@@ -17,7 +17,7 @@ namespace Market.WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KategoriEkle());
+            Application.Run(new UrunEkle());
         }
     }
 }
