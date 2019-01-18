@@ -1,4 +1,5 @@
 ﻿using Market.WFA.KayıtFormları;
+using Market.WFA.UrunAlısİslemleri;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Market.WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CokluUrunEkle());
+            Application.Run(new BarkodOkuForm());
         }
     }
 }

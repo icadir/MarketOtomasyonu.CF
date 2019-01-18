@@ -33,7 +33,7 @@ namespace Market.WFA.IşlemFormları
             txtCategoryName.Text = bulunan.Product.Category.CName;
             txtProductName.Text = bulunan.Product.PName;
             nuPiece.Value = bulunan.MPPiece;
-            nuPrice.Value = bulunan.MPPrice;
+            nuPrice.Value= bulunan.MPPrice;
             richExplanation.Text = bulunan.MPExplanation;
 
         }
