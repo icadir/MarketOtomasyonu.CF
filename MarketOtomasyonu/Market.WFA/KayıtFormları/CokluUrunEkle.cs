@@ -76,5 +76,19 @@ namespace Market.WFA.KayıtFormları
                 resim = MultiProductPicture.Image;
             }
         }
+
+        private void btnMCategoryAdd_Click(object sender, EventArgs e)
+        {
+            KategoriEkle kategoriForm = new KategoriEkle();
+            kategoriForm.cokluurunform = this;
+            kategoriForm.Show();
+        }
+
+        private void btnMProductAdd_Click(object sender, EventArgs e)
+        {
+            UrunEkle urunForm = new UrunEkle();
+            urunForm.coklurunform2 = this;
+            urunForm.Show();
+        }
     }
 }

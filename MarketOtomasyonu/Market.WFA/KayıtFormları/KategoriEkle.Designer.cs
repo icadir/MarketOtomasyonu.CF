@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nuKDV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +82,7 @@
             // btnCategoryAdd
             // 
             this.btnCategoryAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoryAdd.Location = new System.Drawing.Point(110, 100);
+            this.btnCategoryAdd.Location = new System.Drawing.Point(16, 104);
             this.btnCategoryAdd.Name = "btnCategoryAdd";
             this.btnCategoryAdd.Size = new System.Drawing.Size(132, 40);
             this.btnCategoryAdd.TabIndex = 5;
@@ -89,11 +90,23 @@
             this.btnCategoryAdd.UseVisualStyleBackColor = true;
             this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(173, 104);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(132, 40);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Vazgec";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // KategoriEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 152);
+            this.ClientSize = new System.Drawing.Size(360, 172);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCategoryAdd);
             this.Controls.Add(this.txtCategoryName);
             this.Controls.Add(this.label3);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Button btnCategoryAdd;
+        private System.Windows.Forms.Button btnClose;
     }
 }

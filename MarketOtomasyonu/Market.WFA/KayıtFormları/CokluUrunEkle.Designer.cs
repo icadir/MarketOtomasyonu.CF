@@ -44,6 +44,8 @@
             this.MultiProductPicture = new System.Windows.Forms.PictureBox();
             this.btnPictureSelect = new System.Windows.Forms.Button();
             this.openPictureDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnMCategoryAdd = new System.Windows.Forms.Button();
+            this.btnMProductAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nuPiece)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MultiProductPicture)).BeginInit();
@@ -53,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 96);
+            this.label1.Location = new System.Drawing.Point(19, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
@@ -63,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 122);
+            this.label2.Location = new System.Drawing.Point(17, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 1;
@@ -73,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 148);
+            this.label3.Location = new System.Drawing.Point(17, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 16);
             this.label3.TabIndex = 2;
@@ -83,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 38);
+            this.label4.Location = new System.Drawing.Point(17, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
             this.label4.TabIndex = 3;
@@ -93,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 68);
+            this.label5.Location = new System.Drawing.Point(19, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 4;
@@ -103,7 +105,7 @@
             // 
             this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(136, 30);
+            this.cmbCategory.Location = new System.Drawing.Point(128, 30);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(145, 24);
             this.cmbCategory.TabIndex = 5;
@@ -113,7 +115,7 @@
             // 
             this.cmbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(136, 60);
+            this.cmbProduct.Location = new System.Drawing.Point(128, 60);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(145, 24);
             this.cmbProduct.TabIndex = 6;
@@ -121,14 +123,14 @@
             // txtBarkod
             // 
             this.txtBarkod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarkod.Location = new System.Drawing.Point(136, 90);
+            this.txtBarkod.Location = new System.Drawing.Point(128, 90);
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(145, 22);
             this.txtBarkod.TabIndex = 7;
             // 
             // nuPiece
             // 
-            this.nuPiece.Location = new System.Drawing.Point(136, 118);
+            this.nuPiece.Location = new System.Drawing.Point(128, 118);
             this.nuPiece.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -151,7 +153,7 @@
             // nuPrice
             // 
             this.nuPrice.DecimalPlaces = 2;
-            this.nuPrice.Location = new System.Drawing.Point(137, 144);
+            this.nuPrice.Location = new System.Drawing.Point(129, 144);
             this.nuPrice.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -175,7 +177,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 192);
+            this.label6.Location = new System.Drawing.Point(17, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 16);
             this.label6.TabIndex = 10;
@@ -183,7 +185,7 @@
             // 
             // richExplanation
             // 
-            this.richExplanation.Location = new System.Drawing.Point(137, 171);
+            this.richExplanation.Location = new System.Drawing.Point(129, 171);
             this.richExplanation.Name = "richExplanation";
             this.richExplanation.Size = new System.Drawing.Size(143, 68);
             this.richExplanation.TabIndex = 11;
@@ -192,7 +194,7 @@
             // btnMultiAdd
             // 
             this.btnMultiAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiAdd.Location = new System.Drawing.Point(137, 275);
+            this.btnMultiAdd.Location = new System.Drawing.Point(129, 275);
             this.btnMultiAdd.Name = "btnMultiAdd";
             this.btnMultiAdd.Size = new System.Drawing.Size(143, 52);
             this.btnMultiAdd.TabIndex = 12;
@@ -202,7 +204,7 @@
             // 
             // MultiProductPicture
             // 
-            this.MultiProductPicture.Location = new System.Drawing.Point(330, 30);
+            this.MultiProductPicture.Location = new System.Drawing.Point(481, 30);
             this.MultiProductPicture.Name = "MultiProductPicture";
             this.MultiProductPicture.Size = new System.Drawing.Size(157, 134);
             this.MultiProductPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,7 +214,7 @@
             // btnPictureSelect
             // 
             this.btnPictureSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPictureSelect.Location = new System.Drawing.Point(329, 199);
+            this.btnPictureSelect.Location = new System.Drawing.Point(480, 199);
             this.btnPictureSelect.Name = "btnPictureSelect";
             this.btnPictureSelect.Size = new System.Drawing.Size(158, 52);
             this.btnPictureSelect.TabIndex = 14;
@@ -224,11 +226,35 @@
             // 
             this.openPictureDialog.FileName = "openFileDialog1";
             // 
+            // btnMCategoryAdd
+            // 
+            this.btnMCategoryAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMCategoryAdd.Location = new System.Drawing.Point(279, 30);
+            this.btnMCategoryAdd.Name = "btnMCategoryAdd";
+            this.btnMCategoryAdd.Size = new System.Drawing.Size(162, 24);
+            this.btnMCategoryAdd.TabIndex = 15;
+            this.btnMCategoryAdd.Text = "Kategori Ekle";
+            this.btnMCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnMCategoryAdd.Click += new System.EventHandler(this.btnMCategoryAdd_Click);
+            // 
+            // btnMProductAdd
+            // 
+            this.btnMProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMProductAdd.Location = new System.Drawing.Point(279, 60);
+            this.btnMProductAdd.Name = "btnMProductAdd";
+            this.btnMProductAdd.Size = new System.Drawing.Size(162, 24);
+            this.btnMProductAdd.TabIndex = 16;
+            this.btnMProductAdd.Text = "Ürün Ekle";
+            this.btnMProductAdd.UseVisualStyleBackColor = true;
+            this.btnMProductAdd.Click += new System.EventHandler(this.btnMProductAdd_Click);
+            // 
             // CokluUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMProductAdd);
+            this.Controls.Add(this.btnMCategoryAdd);
             this.Controls.Add(this.btnPictureSelect);
             this.Controls.Add(this.MultiProductPicture);
             this.Controls.Add(this.btnMultiAdd);
@@ -262,8 +288,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbCategory;
-        private System.Windows.Forms.ComboBox cmbProduct;
         private System.Windows.Forms.TextBox txtBarkod;
         private System.Windows.Forms.NumericUpDown nuPiece;
         private System.Windows.Forms.NumericUpDown nuPrice;
@@ -273,5 +297,9 @@
         private System.Windows.Forms.PictureBox MultiProductPicture;
         private System.Windows.Forms.Button btnPictureSelect;
         private System.Windows.Forms.OpenFileDialog openPictureDialog;
+        private System.Windows.Forms.Button btnMCategoryAdd;
+        private System.Windows.Forms.Button btnMProductAdd;
+        public System.Windows.Forms.ComboBox cmbCategory;
+        public System.Windows.Forms.ComboBox cmbProduct;
     }
 }

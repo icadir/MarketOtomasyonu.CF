@@ -1,15 +1,12 @@
-﻿using Market.BLL.Repository;
+﻿using Market.BLL.Helper;
+using Market.BLL.Repository;
 using Market.Models.Entities;
 using Market.Models.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Market.WFA.KayıtFormları
@@ -21,10 +18,7 @@ namespace Market.WFA.KayıtFormları
             InitializeComponent();
         }
 
-        MemoryStream memoryStream = new MemoryStream();
-        int bufferSize = 64;
-        byte[] resimArray = new byte[64];
-        private Image resim;
+        public CokluUrunEkle coklurunform2;
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
             try
@@ -48,8 +42,13 @@ namespace Market.WFA.KayıtFormları
 
                 throw;
             }
+            coklurunform2.cmbProduct.DataSource = ProductHelper.GetAllProduct();
+            this.Close();
         }
-       
+        MemoryStream memoryStream = new MemoryStream();
+        int bufferSize = 64;
+        byte[] resimArray = new byte[64];
+        private Image resim;
         private void btnPictureAdd_Click(object sender, EventArgs e)
         {
             
@@ -74,13 +73,13 @@ namespace Market.WFA.KayıtFormları
 
         private void UrunEkle_Load(object sender, EventArgs e)
         {
-           cmbCategory.DataSource = new CategoryRepo().GetAll().Select(x => new CategoryViewModel
-            {
-                CategoryId = x.Id,
-                CategoryName = x.CName,
-                KDV = x.KDV
-            }).ToList();
+            cmbCategory.DataSource = CategoryHelper.GetAllCategories();
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

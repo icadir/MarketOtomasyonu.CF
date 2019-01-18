@@ -1,4 +1,5 @@
-﻿using Market.BLL.Repository;
+﻿using Market.BLL.Helper;
+using Market.BLL.Repository;
 using Market.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Market.WFA.KayıtFormları
             InitializeComponent();
         }
 
+        public CokluUrunEkle cokluurunform;
         private void CategoryEkle_Load(object sender, EventArgs e)
         {
 
@@ -35,12 +37,21 @@ namespace Market.WFA.KayıtFormları
 
                 });
                 MessageBox.Show("Kategori Kaydedildi.");
+             
             }
             catch (Exception ex)
             {
 
                 throw;
             }
+            cokluurunform.cmbCategory.DataSource = CategoryHelper.GetAllCategories();
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

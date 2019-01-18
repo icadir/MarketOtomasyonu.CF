@@ -40,6 +40,7 @@
             this.pProductImage = new System.Windows.Forms.PictureBox();
             this.btnPictureAdd = new System.Windows.Forms.Button();
             this.openPictureDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nuProductPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pProductImage)).BeginInit();
             this.SuspendLayout();
@@ -168,11 +169,23 @@
             // 
             this.openPictureDialog.FileName = "openFileDialog1";
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(9, 162);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(132, 40);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Vazgec";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // UrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 359);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPictureAdd);
             this.Controls.Add(this.pProductImage);
             this.Controls.Add(this.btnProductAdd);
@@ -209,5 +222,6 @@
         private System.Windows.Forms.PictureBox pProductImage;
         private System.Windows.Forms.Button btnPictureAdd;
         private System.Windows.Forms.OpenFileDialog openPictureDialog;
+        private System.Windows.Forms.Button btnClose;
     }
 }
