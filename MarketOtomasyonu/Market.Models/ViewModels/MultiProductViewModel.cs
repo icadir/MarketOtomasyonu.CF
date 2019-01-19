@@ -5,7 +5,7 @@ namespace Market.Models.ViewModels
     public class MultiProductViewModel
     {
         public int UrunId { get; set; }
-
+        public int MultiProductId { get; set; }
         public string MPBarkod { get; set; }
 
         public decimal MPPiece { get; set; }

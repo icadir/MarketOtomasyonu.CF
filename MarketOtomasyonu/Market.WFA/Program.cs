@@ -1,4 +1,5 @@
-﻿using Market.WFA.KayıtFormları;
+﻿using Market.WFA.IşlemFormları;
+using Market.WFA.KayıtFormları;
 using Market.WFA.UrunAlısİslemleri;
 using System;
 using System.Collections.Generic;

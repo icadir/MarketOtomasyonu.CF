@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,9 +34,38 @@ namespace Market.WFA.IşlemFormları
             txtCategoryName.Text = bulunan.Product.Category.CName;
             txtProductName.Text = bulunan.Product.PName;
             nuPiece.Value = bulunan.MPPiece;
-            nuPrice.Value= bulunan.MPPrice;
+            nuPrice.Value = bulunan.MPPrice;
             richExplanation.Text = bulunan.MPExplanation;
 
+        }
+
+        private void btnMultiAdd_Click(object sender, EventArgs e)
+        {
+            var EnteredPiece = nuTakenPieces.Value;
+
+            try
+            {
+                MultiProductAcceptViewModel Model = new MultiProductAcceptViewModel
+                {
+                    Createdate = DateTime.Now,
+                    MPPiece = bulunan.MPPiece,
+                    MPPrice = bulunan.MPPrice,
+                    UrunId = bulunan.UrunId,
+                    NumberoFPieces = nuTakenPieces.Value,
+                    MultiProdcutId = bulunan.MultiProductId,
+                };
+                var sonuc = new MultiProductRepo().AcceptProduct(Model);
+                MessageBox.Show($"{bulunan.Product.PName} ürününden {sonuc} adet alındı ve stoga eklendi.");
+            }
+            catch (DbEntityValidationException ex)
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

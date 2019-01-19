@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\CategoryHelper.cs" />
+    <Compile Include="Helper\EntityHelper.cs" />
     <Compile Include="Helper\MultiProductHelper.cs" />
     <Compile Include="Helper\ProductHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,5 +73,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
