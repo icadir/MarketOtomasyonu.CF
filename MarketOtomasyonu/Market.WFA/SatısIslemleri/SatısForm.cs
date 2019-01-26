@@ -27,6 +27,8 @@ namespace Market.WFA.SatısIslemleri
 
             if (e.KeyCode == Keys.Enter)
             {
+                bool varmi = false;
+                var sepettekiVarOlanurunler = new BasketViewModel();
                 switch (a.Length)
                 {
 
@@ -39,11 +41,11 @@ namespace Market.WFA.SatısIslemleri
                             }
                             else
                             {
-                                bool varmi = false;
-                                var sepettekiVarOlanurunler = new BasketViewModel();
+                                 varmi = false;
+                               
                                 foreach (var sepetViewModel in sepet)
                                 {
-                                    if (bulunan.Id == sepetViewModel.UrunId)
+                                    if (bulunan.Barkod == sepetViewModel.Barkod)
                                     {
                                         varmi = true;
                                         sepettekiVarOlanurunler = sepetViewModel;
@@ -59,9 +61,7 @@ namespace Market.WFA.SatısIslemleri
                                 {
                                     sepet.Add(new BasketViewModel
                                     {
-
                                         UrunId = bulunan.Id,
-                                        MultiUrunId = 0,
                                         BPiece = bulunan.PPiece,
                                         BPrice = bulunan.UBPrice,
                                         Explanation = bulunan.PExplanation,
@@ -75,7 +75,8 @@ namespace Market.WFA.SatısIslemleri
                             break;
                         }
                     case 11:
-                        {
+                    {
+                        varmi = false;
                             var bulunancok = new MultiProductRepo().GetAll(x => x.MPBarkod == a).FirstOrDefault();
                             if (bulunancok == null)
                             {
@@ -83,11 +84,11 @@ namespace Market.WFA.SatısIslemleri
                             }
                             else
                             {
-                                bool varmi = false;
-                                var sepettekiVarOlanurunler = new BasketViewModel();
+                                //bool varmi = false;
+                                //var sepettekiVarOlanurunler = new BasketViewModel();
                                 foreach (var sepetViewModel in sepet)
                                 {
-                                    if (bulunancok.Id == sepetViewModel.MultiUrunId)
+                                    if (bulunancok.MPBarkod== sepetViewModel.Barkod)
                                     {
                                         varmi = true;
                                         sepettekiVarOlanurunler = sepetViewModel;
@@ -122,7 +123,7 @@ namespace Market.WFA.SatısIslemleri
                             break;
                         }
                     default:
-                        MessageBox.Show("Yanlıs Giris Yaptınız Tekrar Deneyin.");
+                        MessageBox.Show("Yanlıs Barkod Girisi Yaptınız Tekrar Deneyin.");
                         break;
                 }
             }
@@ -180,58 +181,43 @@ namespace Market.WFA.SatısIslemleri
             lblToplamFiyat.Text = $"Toplam: {anatoplam:c2}";
         }
 
-        private bool odeme = false;
+        private bool odeme = true;
 
         private void btnTamamla_Click(object sender, EventArgs e)
         {
-            if (rbNakit.Checked == true)
-            {
-                if (txtNakit == null || txtNakit.Text == "")
-                {
-                    MessageBox.Show("Lütfen Nakit Girisi Yapınız.");
-                }
-                else
-                {
-                    var GirilenNakit = Convert.ToDecimal(txtNakit.Text);
-                    if (GirilenNakit >= anatoplam)
-                    {
-                        lblParaüstü.Visible = true;
-                        lblParaüstü.Text = $"Para Üstü:{(GirilenNakit - anatoplam):c2}";
-                        odeme = true;
-                    }
-                    else
-                    {
-                        odeme = false;
-                        MessageBox.Show("Girilen Para Yeterli degil.");
-                    }
-                }
-            }
+           
 
             var rbuttonlar = pnlOdemeTip.Controls.OfType<RadioButton>().ToArray();
             var odemeIndex = Array.IndexOf(rbuttonlar, rbuttonlar.Single(rb => rb.Checked));
-            if (rbNakit.Checked==true|| rbKkartı.Checked==true)
+
+            if (odeme)
             {
-                try
+                if (rbNakit.Checked == true || rbKkartı.Checked == true)
                 {
-                    var doit = new SalesRepo();
-                    var saless = new MakeSalesViewModel
+                    try
                     {
-                        BasketModel = sepet,
-                        PaymentType = (OdemeTipi)odemeIndex,
-                        
-                    };
+                        var doit = new SalesRepo();
+                        var saless = new MakeSalesViewModel
+                        {
+                            BasketModel = sepet,
+                            PaymentType = (OdemeTipi)odemeIndex,
 
-                  var finishim=  doit.MakeSales(saless);
-                  MessageBox.Show($"{finishim} nolu satış yapıldı.");
+                        };
+
+                        var finishim = doit.MakeSales(saless);
+                        MessageBox.Show($"{finishim} nolu satış yapıldı.");
 
 
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Satıs Yaparken Bir hata olustu"+ex.Message);
-                  
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Satıs Yaparken Bir hata olustu" + ex.Message);
+
+                    }
                 }
             }
+           
+
 
 
         }
@@ -242,6 +228,7 @@ namespace Market.WFA.SatısIslemleri
             {
                 pnlOdemeAl.Visible = true;
                 pnlPesinpanel.Visible = true;
+                btnTamamla.Visible = false ;
 
             }
         }
@@ -250,6 +237,33 @@ namespace Market.WFA.SatısIslemleri
         {
             pnlPesinpanel.Visible = false;
             pnlOdemeAl.Visible = true;
+            btnTamamla.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        
+            if (txtNakit == null || txtNakit.Text == "")
+            {
+                MessageBox.Show("Lütfen Nakit Girisi Yapınız.");
+            }
+            else
+            {
+                var GirilenNakit = Convert.ToDecimal(txtNakit.Text);
+                if (GirilenNakit >= anatoplam)
+                {
+                    lblParaüstü.Visible = true;
+                    lblParaüstü.Text = $"Para Üstü:{(GirilenNakit - anatoplam):c2}";
+                    odeme = true;
+                    btnTamamla.Visible = true;
+                }
+                else
+                {
+                    odeme = false;
+                    MessageBox.Show("Girilen Para Yeterli degil. Tekrar Giiriniz");
+                    txtNakit.Focus();
+                }
+            }
         }
     }
 }

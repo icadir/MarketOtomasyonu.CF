@@ -29,6 +29,9 @@ namespace Market.DAL
             modelBuilder.Entity<Product>()
                 .Property(x => x.Stock)
                 .HasPrecision(7, 0);
+            //modelBuilder.Entity<Product>()
+            //    .Property(p => p.PPiece)
+            //    .HasPrecision(1, 0);
             modelBuilder.Entity<MultiProduct>()
                 .Property(p => p.MPPiece)
                 .HasPrecision(6, 0);

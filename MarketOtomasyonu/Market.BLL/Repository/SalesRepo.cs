@@ -30,7 +30,7 @@ namespace Market.BLL.Repository
                             Id = item.MultiUrunId,
                             Id2 = sale.Id,
                             STotalPrice = (item.BPrice * item.GPiece),
-                            SPiece = (item.GPiece * item.GPiece),
+                            SPiece = (item.GPiece * item.BPiece),
                         });
 
                         var urun = db.Products.Find(item.UrunId);

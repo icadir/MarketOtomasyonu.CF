@@ -50,6 +50,7 @@
             this.pnlBarkod = new System.Windows.Forms.Panel();
             this.pnlPoset = new System.Windows.Forms.Panel();
             this.txtNakit = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
             this.pnlPesinpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).BeginInit();
@@ -108,12 +109,13 @@
             // btnTamamla
             // 
             this.btnTamamla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTamamla.Location = new System.Drawing.Point(9, 112);
+            this.btnTamamla.Location = new System.Drawing.Point(18, 123);
             this.btnTamamla.Name = "btnTamamla";
             this.btnTamamla.Size = new System.Drawing.Size(347, 60);
             this.btnTamamla.TabIndex = 4;
             this.btnTamamla.Text = "Satıs";
             this.btnTamamla.UseVisualStyleBackColor = true;
+            this.btnTamamla.Visible = false;
             this.btnTamamla.Click += new System.EventHandler(this.btnTamamla_Click);
             // 
             // rbKkartı
@@ -144,13 +146,14 @@
             // 
             // pnlPesinpanel
             // 
+            this.pnlPesinpanel.Controls.Add(this.button1);
             this.pnlPesinpanel.Controls.Add(this.txtNakit);
             this.pnlPesinpanel.Controls.Add(this.lblParaüstü);
             this.pnlPesinpanel.Controls.Add(this.label4);
             this.pnlPesinpanel.Controls.Add(this.label6);
             this.pnlPesinpanel.Location = new System.Drawing.Point(18, 20);
             this.pnlPesinpanel.Name = "pnlPesinpanel";
-            this.pnlPesinpanel.Size = new System.Drawing.Size(278, 86);
+            this.pnlPesinpanel.Size = new System.Drawing.Size(409, 86);
             this.pnlPesinpanel.TabIndex = 7;
             this.pnlPesinpanel.Visible = false;
             // 
@@ -160,9 +163,8 @@
             this.lblParaüstü.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParaüstü.Location = new System.Drawing.Point(128, 43);
             this.lblParaüstü.Name = "lblParaüstü";
-            this.lblParaüstü.Size = new System.Drawing.Size(76, 16);
+            this.lblParaüstü.Size = new System.Drawing.Size(0, 16);
             this.lblParaüstü.TabIndex = 12;
-            this.lblParaüstü.Text = "Para Üstü";
             // 
             // label4
             // 
@@ -268,7 +270,7 @@
             this.pnlOdemeAl.Controls.Add(this.pnlPesinpanel);
             this.pnlOdemeAl.Location = new System.Drawing.Point(442, 394);
             this.pnlOdemeAl.Name = "pnlOdemeAl";
-            this.pnlOdemeAl.Size = new System.Drawing.Size(386, 197);
+            this.pnlOdemeAl.Size = new System.Drawing.Size(442, 197);
             this.pnlOdemeAl.TabIndex = 21;
             this.pnlOdemeAl.Visible = false;
             // 
@@ -298,6 +300,16 @@
             this.txtNakit.Name = "txtNakit";
             this.txtNakit.Size = new System.Drawing.Size(115, 20);
             this.txtNakit.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(254, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 57);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Nakit Al";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SatısForm
             // 
@@ -355,5 +367,6 @@
         private System.Windows.Forms.Panel pnlBarkod;
         private System.Windows.Forms.Panel pnlPoset;
         private System.Windows.Forms.TextBox txtNakit;
+        private System.Windows.Forms.Button button1;
     }
 }
