@@ -36,13 +36,13 @@
             this.rdKkartı = new System.Windows.Forms.RadioButton();
             this.rdPesin = new System.Windows.Forms.RadioButton();
             this.pPesinPanel = new System.Windows.Forms.Panel();
+            this.lblParaüstü = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nuNakit = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblToplamFiyat = new System.Windows.Forms.Label();
-            this.nuNakit = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblParaüstü = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
             this.pPesinPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuNakit)).BeginInit();
@@ -55,7 +55,7 @@
             this.lstSatılacakurunler.ItemHeight = 16;
             this.lstSatılacakurunler.Location = new System.Drawing.Point(442, 12);
             this.lstSatılacakurunler.Name = "lstSatılacakurunler";
-            this.lstSatılacakurunler.Size = new System.Drawing.Size(391, 212);
+            this.lstSatılacakurunler.Size = new System.Drawing.Size(442, 212);
             this.lstSatılacakurunler.TabIndex = 0;
             // 
             // txtBarkod
@@ -99,7 +99,7 @@
             this.btnTamamla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTamamla.Location = new System.Drawing.Point(441, 405);
             this.btnTamamla.Name = "btnTamamla";
-            this.btnTamamla.Size = new System.Drawing.Size(391, 60);
+            this.btnTamamla.Size = new System.Drawing.Size(443, 60);
             this.btnTamamla.TabIndex = 4;
             this.btnTamamla.Text = "Satıs";
             this.btnTamamla.UseVisualStyleBackColor = true;
@@ -140,6 +140,53 @@
             this.pPesinPanel.TabIndex = 7;
             this.pPesinPanel.Visible = false;
             // 
+            // lblParaüstü
+            // 
+            this.lblParaüstü.AutoSize = true;
+            this.lblParaüstü.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParaüstü.Location = new System.Drawing.Point(123, 43);
+            this.lblParaüstü.Name = "lblParaüstü";
+            this.lblParaüstü.Size = new System.Drawing.Size(76, 16);
+            this.lblParaüstü.TabIndex = 12;
+            this.lblParaüstü.Text = "Para Üstü";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Nakit Ücreti";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Para Üstü :";
+            // 
+            // nuNakit
+            // 
+            this.nuNakit.Location = new System.Drawing.Point(129, 13);
+            this.nuNakit.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nuNakit.Name = "nuNakit";
+            this.nuNakit.Size = new System.Drawing.Size(129, 20);
+            this.nuNakit.TabIndex = 11;
+            this.nuNakit.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -169,53 +216,6 @@
             this.lblToplamFiyat.Size = new System.Drawing.Size(99, 16);
             this.lblToplamFiyat.TabIndex = 10;
             this.lblToplamFiyat.Text = "Toplam Fiyat";
-            // 
-            // nuNakit
-            // 
-            this.nuNakit.Location = new System.Drawing.Point(129, 13);
-            this.nuNakit.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.nuNakit.Name = "nuNakit";
-            this.nuNakit.Size = new System.Drawing.Size(129, 20);
-            this.nuNakit.TabIndex = 11;
-            this.nuNakit.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Nakit Ücreti";
-            // 
-            // lblParaüstü
-            // 
-            this.lblParaüstü.AutoSize = true;
-            this.lblParaüstü.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParaüstü.Location = new System.Drawing.Point(123, 43);
-            this.lblParaüstü.Name = "lblParaüstü";
-            this.lblParaüstü.Size = new System.Drawing.Size(76, 16);
-            this.lblParaüstü.TabIndex = 12;
-            this.lblParaüstü.Text = "Para Üstü";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Para Üstü :";
             // 
             // SatısForm
             // 

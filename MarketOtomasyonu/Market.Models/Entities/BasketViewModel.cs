@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Market.Models.Entities
+﻿namespace Market.Models.Entities
 {
     public class BasketViewModel
     {
@@ -16,7 +10,7 @@ namespace Market.Models.Entities
         public string Explanation { get; set; }
         public string ProductName { get; set; }
 
-        public override string ToString() => $"{ProductName} -- {(GPiece* BPrice):c2} -- {Explanation} Adet :{GPiece}";
+        public override string ToString() => $"{ProductName} -Fiyat-{BPrice:c2} -- {Explanation}--- Adet :{GPiece}";
 
     }
 }

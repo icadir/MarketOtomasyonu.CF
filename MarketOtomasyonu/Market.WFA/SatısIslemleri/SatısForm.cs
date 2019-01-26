@@ -27,6 +27,7 @@ namespace Market.WFA.SatısIslemleri
             {
                 switch (a.Length)
                 {
+
                     case 5:
                         {
                             var bulunan = new ProductRepo().GetAll(x => x.Barkod == a).FirstOrDefault();
@@ -36,20 +37,37 @@ namespace Market.WFA.SatısIslemleri
                             }
                             else
                             {
-                                sepet.Add(new BasketViewModel
+                                bool varmi = false;
+                                var sepettekiVarOlanurunler = new BasketViewModel();
+                                foreach (var sepetViewModel in sepet)
                                 {
+                                    if (bulunan.Id == sepetViewModel.UrunId)
+                                    {
+                                        varmi = true;
+                                        sepettekiVarOlanurunler = sepetViewModel;
+                                        break;
+                                    }
+                                }
 
-                                    UrunId = bulunan.Id,
-                                    MultiUrunId = 1,
-                                    BPiece = bulunan.PPiece,
-                                    BPrice = bulunan.UBPrice,
-                                    Explanation = bulunan.PExplanation,
-                                    GPiece = nuAdet.Value,
-                                    ProductName = bulunan.PName,
-                                });
+                                if (varmi)
+                                {
+                                    sepettekiVarOlanurunler.GPiece += nuAdet.Value;
+                                }
+                                else
+                                {
+                                    sepet.Add(new BasketViewModel
+                                    {
 
+                                        UrunId = bulunan.Id,
+                                        MultiUrunId = 0,
+                                        BPiece = bulunan.PPiece,
+                                        BPrice = bulunan.UBPrice,
+                                        Explanation = bulunan.PExplanation,
+                                        GPiece = nuAdet.Value,
+                                        ProductName = bulunan.PName,
+                                    });
+                                }
                             }
-
                             SepetHesapla();
                             break;
                         }
@@ -62,16 +80,37 @@ namespace Market.WFA.SatısIslemleri
                             }
                             else
                             {
-                                sepet.Add(new BasketViewModel
+                                bool varmi = false;
+                                var sepettekiVarOlanurunler = new BasketViewModel();
+                                foreach (var sepetViewModel in sepet)
                                 {
-                                    UrunId = bulunancok.Product.Id,
-                                    MultiUrunId = bulunancok.Id,
-                                    BPiece = bulunancok.MPPiece,
-                                    BPrice = bulunancok.MPPrice,
-                                    Explanation = bulunancok.MPExplanation,
-                                    GPiece = nuAdet.Value,
-                                    ProductName = bulunancok.Product.PName,
-                                });
+                                    if (bulunancok.Id == sepetViewModel.MultiUrunId)
+                                    {
+                                        varmi = true;
+                                        sepettekiVarOlanurunler = sepetViewModel;
+                                        break;
+                                    }
+                                }
+
+                                if (varmi)
+                                {
+                                    sepettekiVarOlanurunler.GPiece += nuAdet.Value;
+                                }
+                                else
+                                {
+                                    sepet.Add(new BasketViewModel
+                                    {
+                                        UrunId = bulunancok.Product.Id,
+                                        MultiUrunId = bulunancok.Id,
+                                        BPiece = bulunancok.MPPiece,
+                                        BPrice = bulunancok.MPPrice,
+                                        Explanation = bulunancok.MPExplanation,
+                                        GPiece = nuAdet.Value,
+                                        ProductName = bulunancok.Product.PName,
+                                    });
+
+                                }
+                               
 
                             }
 
