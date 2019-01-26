@@ -69,6 +69,7 @@ namespace Market.WFA.SatısIslemleri
                                 }
                             }
                             SepetHesapla();
+                            txtBarkod.Focus();
                             break;
                         }
                     case 11:
@@ -115,6 +116,7 @@ namespace Market.WFA.SatısIslemleri
                             }
 
                             SepetHesapla();
+                            txtBarkod.Focus();
                             break;
                         }
                     default:
@@ -144,6 +146,7 @@ namespace Market.WFA.SatısIslemleri
             pnlBarkod.Visible = false;
             lstSatılacakurunler.Visible = false;
             pnlPoset.Visible = false;
+            pnlOdemeAl.Visible = true;
 
         }
         private int posetSayisi = 0;

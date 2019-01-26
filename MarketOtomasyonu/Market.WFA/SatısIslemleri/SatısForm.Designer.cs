@@ -39,7 +39,6 @@
             this.lblParaüstü = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.nuNakit = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblToplamFiyat = new System.Windows.Forms.Label();
@@ -50,9 +49,9 @@
             this.pnlOdemeAl = new System.Windows.Forms.Panel();
             this.pnlBarkod = new System.Windows.Forms.Panel();
             this.pnlPoset = new System.Windows.Forms.Panel();
+            this.txtNakit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
             this.pPesinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuNakit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).BeginInit();
             this.pnlOdemeTip.SuspendLayout();
             this.pnlOdemeAl.SuspendLayout();
@@ -77,7 +76,6 @@
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(129, 22);
             this.txtBarkod.TabIndex = 1;
-          
             this.txtBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkod_KeyDown);
             // 
             // label1
@@ -110,7 +108,7 @@
             // btnTamamla
             // 
             this.btnTamamla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTamamla.Location = new System.Drawing.Point(11, 140);
+            this.btnTamamla.Location = new System.Drawing.Point(3, 95);
             this.btnTamamla.Name = "btnTamamla";
             this.btnTamamla.Size = new System.Drawing.Size(347, 60);
             this.btnTamamla.TabIndex = 4;
@@ -121,7 +119,7 @@
             // 
             this.rdKkartı.AutoSize = true;
             this.rdKkartı.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdKkartı.Location = new System.Drawing.Point(107, 6);
+            this.rdKkartı.Location = new System.Drawing.Point(109, 7);
             this.rdKkartı.Name = "rdKkartı";
             this.rdKkartı.Size = new System.Drawing.Size(97, 20);
             this.rdKkartı.TabIndex = 5;
@@ -133,24 +131,25 @@
             // 
             this.rdPesin.AutoSize = true;
             this.rdPesin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdPesin.Location = new System.Drawing.Point(6, 5);
+            this.rdPesin.Location = new System.Drawing.Point(6, 7);
             this.rdPesin.Name = "rdPesin";
-            this.rdPesin.Size = new System.Drawing.Size(65, 20);
+            this.rdPesin.Size = new System.Drawing.Size(62, 20);
             this.rdPesin.TabIndex = 6;
             this.rdPesin.TabStop = true;
-            this.rdPesin.Text = "Peşin";
+            this.rdPesin.Text = "Nakit";
             this.rdPesin.UseVisualStyleBackColor = true;
             // 
             // pPesinPanel
             // 
+            this.pPesinPanel.Controls.Add(this.txtNakit);
             this.pPesinPanel.Controls.Add(this.lblParaüstü);
             this.pPesinPanel.Controls.Add(this.label4);
             this.pPesinPanel.Controls.Add(this.label6);
-            this.pPesinPanel.Controls.Add(this.nuNakit);
-            this.pPesinPanel.Location = new System.Drawing.Point(9, 39);
+            this.pPesinPanel.Location = new System.Drawing.Point(5, 3);
             this.pPesinPanel.Name = "pPesinPanel";
             this.pPesinPanel.Size = new System.Drawing.Size(278, 86);
             this.pPesinPanel.TabIndex = 7;
+            this.pPesinPanel.Visible = false;
             // 
             // lblParaüstü
             // 
@@ -181,23 +180,6 @@
             this.label6.Size = new System.Drawing.Size(84, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Para Üstü :";
-            // 
-            // nuNakit
-            // 
-            this.nuNakit.Location = new System.Drawing.Point(129, 13);
-            this.nuNakit.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.nuNakit.Name = "nuNakit";
-            this.nuNakit.Size = new System.Drawing.Size(129, 20);
-            this.nuNakit.TabIndex = 11;
-            this.nuNakit.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label2
             // 
@@ -271,20 +253,18 @@
             // 
             this.pnlOdemeTip.Controls.Add(this.rdPesin);
             this.pnlOdemeTip.Controls.Add(this.rdKkartı);
-            this.pnlOdemeTip.Location = new System.Drawing.Point(9, 3);
+            this.pnlOdemeTip.Location = new System.Drawing.Point(445, 343);
             this.pnlOdemeTip.Name = "pnlOdemeTip";
             this.pnlOdemeTip.Size = new System.Drawing.Size(236, 30);
             this.pnlOdemeTip.TabIndex = 20;
-            this.pnlOdemeTip.Visible = false;
             // 
             // pnlOdemeAl
             // 
-            this.pnlOdemeAl.Controls.Add(this.pnlOdemeTip);
             this.pnlOdemeAl.Controls.Add(this.btnTamamla);
             this.pnlOdemeAl.Controls.Add(this.pPesinPanel);
-            this.pnlOdemeAl.Location = new System.Drawing.Point(444, 350);
+            this.pnlOdemeAl.Location = new System.Drawing.Point(442, 394);
             this.pnlOdemeAl.Name = "pnlOdemeAl";
-            this.pnlOdemeAl.Size = new System.Drawing.Size(388, 213);
+            this.pnlOdemeAl.Size = new System.Drawing.Size(385, 165);
             this.pnlOdemeAl.TabIndex = 21;
             this.pnlOdemeAl.Visible = false;
             // 
@@ -308,11 +288,19 @@
             this.pnlPoset.Size = new System.Drawing.Size(183, 40);
             this.pnlPoset.TabIndex = 23;
             // 
+            // txtNakit
+            // 
+            this.txtNakit.Location = new System.Drawing.Point(131, 13);
+            this.txtNakit.Name = "txtNakit";
+            this.txtNakit.Size = new System.Drawing.Size(115, 20);
+            this.txtNakit.TabIndex = 13;
+            // 
             // SatısForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 603);
+            this.Controls.Add(this.pnlOdemeTip);
             this.Controls.Add(this.pnlPoset);
             this.Controls.Add(this.pnlBarkod);
             this.Controls.Add(this.pnlOdemeAl);
@@ -325,7 +313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).EndInit();
             this.pPesinPanel.ResumeLayout(false);
             this.pPesinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nuNakit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).EndInit();
             this.pnlOdemeTip.ResumeLayout(false);
             this.pnlOdemeTip.PerformLayout();
@@ -355,7 +342,6 @@
         private System.Windows.Forms.Label lblParaüstü;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown nuNakit;
         private System.Windows.Forms.CheckBox cbPoset;
         private System.Windows.Forms.NumericUpDown nuPoset;
         private System.Windows.Forms.Button btnOde;
@@ -363,5 +349,6 @@
         private System.Windows.Forms.Panel pnlOdemeAl;
         private System.Windows.Forms.Panel pnlBarkod;
         private System.Windows.Forms.Panel pnlPoset;
+        private System.Windows.Forms.TextBox txtNakit;
     }
 }
