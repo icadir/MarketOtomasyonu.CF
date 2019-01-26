@@ -56,6 +56,7 @@ namespace Market.WFA.IşlemFormları
                 };
                 var sonuc = new MultiProductRepo().AcceptProduct(Model);
                 MessageBox.Show($"{bulunan.Product.PName} ürününden {sonuc} adet alındı ve stoga eklendi.");
+                this.Close();
             }
             catch (DbEntityValidationException ex)
             {

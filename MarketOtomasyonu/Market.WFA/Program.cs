@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market.WFA.SatısIslemleri;
 
 namespace Market.WFA
 {
@@ -19,7 +20,7 @@ namespace Market.WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BarkodOkuForm());
+            Application.Run(new SatısForm());
         }
     }
 }

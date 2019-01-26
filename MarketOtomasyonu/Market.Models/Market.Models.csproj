@@ -57,6 +57,7 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Sales.cs" />
     <Compile Include="Entities\Sales_Detail.cs" />
+    <Compile Include="Entities\BasketViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\MultiProductAcceptViewModel.cs" />

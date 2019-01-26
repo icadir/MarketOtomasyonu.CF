@@ -23,9 +23,11 @@ namespace Market.BLL.Helper
         public static object ProductBroughtBySelectedCategory(CategoryViewModel model)
         {
            return new ProductRepo().GetAll()
-               .Where(x => x.Id == model.CategoryId)
+               .Where(x => x.CategoryId == model.CategoryId)
                .Select(x => new ProductViewModel
                {
+                    
+                   ProdcutId = x.Id,
                    Barkod = x.Barkod,
                    Category = x.Category,
                    CategoryId = x.CategoryId,

@@ -44,6 +44,7 @@ namespace Market.WFA.KayıtFormları
                     MPPicture = resimArray,
                 });
                 MessageBox.Show("Yeni Ürün Eklendi.");
+                this.Close();
             }
             catch (Exception ex)
             {

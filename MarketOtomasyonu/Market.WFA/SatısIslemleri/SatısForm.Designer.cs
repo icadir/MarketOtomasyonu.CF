@@ -31,7 +31,7 @@
             this.lstSatılacakurunler = new System.Windows.Forms.ListBox();
             this.txtBarkod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nuSayi = new System.Windows.Forms.NumericUpDown();
+            this.nuAdet = new System.Windows.Forms.NumericUpDown();
             this.btnTamamla = new System.Windows.Forms.Button();
             this.rdKkartı = new System.Windows.Forms.RadioButton();
             this.rdPesin = new System.Windows.Forms.RadioButton();
@@ -39,13 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblToplamFiyat = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nuNakit = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.lblParaüstü = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nuSayi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
             this.pPesinPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuNakit)).BeginInit();
             this.SuspendLayout();
             // 
             // lstSatılacakurunler
@@ -77,18 +77,18 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Barkod No :";
             // 
-            // nuSayi
+            // nuAdet
             // 
-            this.nuSayi.Location = new System.Drawing.Point(140, 89);
-            this.nuSayi.Maximum = new decimal(new int[] {
+            this.nuAdet.Location = new System.Drawing.Point(140, 89);
+            this.nuAdet.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.nuSayi.Name = "nuSayi";
-            this.nuSayi.Size = new System.Drawing.Size(129, 20);
-            this.nuSayi.TabIndex = 3;
-            this.nuSayi.Value = new decimal(new int[] {
+            this.nuAdet.Name = "nuAdet";
+            this.nuAdet.Size = new System.Drawing.Size(129, 20);
+            this.nuAdet.TabIndex = 3;
+            this.nuAdet.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -133,7 +133,7 @@
             this.pPesinPanel.Controls.Add(this.lblParaüstü);
             this.pPesinPanel.Controls.Add(this.label4);
             this.pPesinPanel.Controls.Add(this.label6);
-            this.pPesinPanel.Controls.Add(this.numericUpDown1);
+            this.pPesinPanel.Controls.Add(this.nuNakit);
             this.pPesinPanel.Location = new System.Drawing.Point(442, 295);
             this.pPesinPanel.Name = "pPesinPanel";
             this.pPesinPanel.Size = new System.Drawing.Size(278, 86);
@@ -170,18 +170,18 @@
             this.lblToplamFiyat.TabIndex = 10;
             this.lblToplamFiyat.Text = "Toplam Fiyat";
             // 
-            // numericUpDown1
+            // nuNakit
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(129, 13);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nuNakit.Location = new System.Drawing.Point(129, 13);
+            this.nuNakit.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(129, 20);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nuNakit.Name = "nuNakit";
+            this.nuNakit.Size = new System.Drawing.Size(129, 20);
+            this.nuNakit.TabIndex = 11;
+            this.nuNakit.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -229,16 +229,16 @@
             this.Controls.Add(this.rdPesin);
             this.Controls.Add(this.rdKkartı);
             this.Controls.Add(this.btnTamamla);
-            this.Controls.Add(this.nuSayi);
+            this.Controls.Add(this.nuAdet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBarkod);
             this.Controls.Add(this.lstSatılacakurunler);
             this.Name = "SatısForm";
             this.Text = "SatısForm";
-            ((System.ComponentModel.ISupportInitialize)(this.nuSayi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).EndInit();
             this.pPesinPanel.ResumeLayout(false);
             this.pPesinPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nuNakit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,7 +249,7 @@
         private System.Windows.Forms.ListBox lstSatılacakurunler;
         private System.Windows.Forms.TextBox txtBarkod;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nuSayi;
+        private System.Windows.Forms.NumericUpDown nuAdet;
         private System.Windows.Forms.Button btnTamamla;
         private System.Windows.Forms.RadioButton rdKkartı;
         private System.Windows.Forms.RadioButton rdPesin;
@@ -260,6 +260,6 @@
         private System.Windows.Forms.Label lblParaüstü;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nuNakit;
     }
 }
