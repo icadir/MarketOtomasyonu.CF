@@ -16,7 +16,7 @@ namespace Market.Models.Entities
         public string Explanation { get; set; }
         public string ProductName { get; set; }
 
-        public override string ToString() => $"{ProductName} -- {(GPiece* BPrice):c2} -- {Explanation}";
+        public override string ToString() => $"{ProductName} -- {(GPiece* BPrice):c2} -- {Explanation} Adet :{GPiece}";
 
     }
 }

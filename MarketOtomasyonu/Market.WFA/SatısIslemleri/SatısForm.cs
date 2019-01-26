@@ -67,7 +67,7 @@ namespace Market.WFA.SatısIslemleri
                                     UrunId = bulunancok.Product.Id,
                                     MultiUrunId = bulunancok.Id,
                                     BPiece = bulunancok.MPPiece,
-                                    BPrice = bulunancok.MPPiece,
+                                    BPrice = bulunancok.MPPrice,
                                     Explanation = bulunancok.MPExplanation,
                                     GPiece = nuAdet.Value,
                                     ProductName = bulunancok.Product.PName,
