@@ -33,9 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nuAdet = new System.Windows.Forms.NumericUpDown();
             this.btnTamamla = new System.Windows.Forms.Button();
-            this.rdKkartı = new System.Windows.Forms.RadioButton();
-            this.rdPesin = new System.Windows.Forms.RadioButton();
-            this.pPesinPanel = new System.Windows.Forms.Panel();
+            this.rbKkartı = new System.Windows.Forms.RadioButton();
+            this.rbNakit = new System.Windows.Forms.RadioButton();
+            this.pnlPesinpanel = new System.Windows.Forms.Panel();
             this.lblParaüstü = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.pnlPoset = new System.Windows.Forms.Panel();
             this.txtNakit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
-            this.pPesinPanel.SuspendLayout();
+            this.pnlPesinpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).BeginInit();
             this.pnlOdemeTip.SuspendLayout();
             this.pnlOdemeAl.SuspendLayout();
@@ -108,48 +108,51 @@
             // btnTamamla
             // 
             this.btnTamamla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTamamla.Location = new System.Drawing.Point(3, 95);
+            this.btnTamamla.Location = new System.Drawing.Point(9, 112);
             this.btnTamamla.Name = "btnTamamla";
             this.btnTamamla.Size = new System.Drawing.Size(347, 60);
             this.btnTamamla.TabIndex = 4;
             this.btnTamamla.Text = "Satıs";
             this.btnTamamla.UseVisualStyleBackColor = true;
+            this.btnTamamla.Click += new System.EventHandler(this.btnTamamla_Click);
             // 
-            // rdKkartı
+            // rbKkartı
             // 
-            this.rdKkartı.AutoSize = true;
-            this.rdKkartı.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdKkartı.Location = new System.Drawing.Point(109, 7);
-            this.rdKkartı.Name = "rdKkartı";
-            this.rdKkartı.Size = new System.Drawing.Size(97, 20);
-            this.rdKkartı.TabIndex = 5;
-            this.rdKkartı.TabStop = true;
-            this.rdKkartı.Text = "Kredi Kartı";
-            this.rdKkartı.UseVisualStyleBackColor = true;
+            this.rbKkartı.AutoSize = true;
+            this.rbKkartı.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbKkartı.Location = new System.Drawing.Point(109, 7);
+            this.rbKkartı.Name = "rbKkartı";
+            this.rbKkartı.Size = new System.Drawing.Size(97, 20);
+            this.rbKkartı.TabIndex = 5;
+            this.rbKkartı.TabStop = true;
+            this.rbKkartı.Text = "Kredi Kartı";
+            this.rbKkartı.UseVisualStyleBackColor = true;
+            this.rbKkartı.CheckedChanged += new System.EventHandler(this.rbKkartı_CheckedChanged);
             // 
-            // rdPesin
+            // rbNakit
             // 
-            this.rdPesin.AutoSize = true;
-            this.rdPesin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdPesin.Location = new System.Drawing.Point(6, 7);
-            this.rdPesin.Name = "rdPesin";
-            this.rdPesin.Size = new System.Drawing.Size(62, 20);
-            this.rdPesin.TabIndex = 6;
-            this.rdPesin.TabStop = true;
-            this.rdPesin.Text = "Nakit";
-            this.rdPesin.UseVisualStyleBackColor = true;
+            this.rbNakit.AutoSize = true;
+            this.rbNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNakit.Location = new System.Drawing.Point(6, 7);
+            this.rbNakit.Name = "rbNakit";
+            this.rbNakit.Size = new System.Drawing.Size(62, 20);
+            this.rbNakit.TabIndex = 6;
+            this.rbNakit.TabStop = true;
+            this.rbNakit.Text = "Nakit";
+            this.rbNakit.UseVisualStyleBackColor = true;
+            this.rbNakit.CheckedChanged += new System.EventHandler(this.rbNakit_CheckedChanged);
             // 
-            // pPesinPanel
+            // pnlPesinpanel
             // 
-            this.pPesinPanel.Controls.Add(this.txtNakit);
-            this.pPesinPanel.Controls.Add(this.lblParaüstü);
-            this.pPesinPanel.Controls.Add(this.label4);
-            this.pPesinPanel.Controls.Add(this.label6);
-            this.pPesinPanel.Location = new System.Drawing.Point(5, 3);
-            this.pPesinPanel.Name = "pPesinPanel";
-            this.pPesinPanel.Size = new System.Drawing.Size(278, 86);
-            this.pPesinPanel.TabIndex = 7;
-            this.pPesinPanel.Visible = false;
+            this.pnlPesinpanel.Controls.Add(this.txtNakit);
+            this.pnlPesinpanel.Controls.Add(this.lblParaüstü);
+            this.pnlPesinpanel.Controls.Add(this.label4);
+            this.pnlPesinpanel.Controls.Add(this.label6);
+            this.pnlPesinpanel.Location = new System.Drawing.Point(18, 20);
+            this.pnlPesinpanel.Name = "pnlPesinpanel";
+            this.pnlPesinpanel.Size = new System.Drawing.Size(278, 86);
+            this.pnlPesinpanel.TabIndex = 7;
+            this.pnlPesinpanel.Visible = false;
             // 
             // lblParaüstü
             // 
@@ -251,20 +254,21 @@
             // 
             // pnlOdemeTip
             // 
-            this.pnlOdemeTip.Controls.Add(this.rdPesin);
-            this.pnlOdemeTip.Controls.Add(this.rdKkartı);
+            this.pnlOdemeTip.Controls.Add(this.rbNakit);
+            this.pnlOdemeTip.Controls.Add(this.rbKkartı);
             this.pnlOdemeTip.Location = new System.Drawing.Point(445, 343);
             this.pnlOdemeTip.Name = "pnlOdemeTip";
             this.pnlOdemeTip.Size = new System.Drawing.Size(236, 30);
             this.pnlOdemeTip.TabIndex = 20;
+            this.pnlOdemeTip.Visible = false;
             // 
             // pnlOdemeAl
             // 
             this.pnlOdemeAl.Controls.Add(this.btnTamamla);
-            this.pnlOdemeAl.Controls.Add(this.pPesinPanel);
+            this.pnlOdemeAl.Controls.Add(this.pnlPesinpanel);
             this.pnlOdemeAl.Location = new System.Drawing.Point(442, 394);
             this.pnlOdemeAl.Name = "pnlOdemeAl";
-            this.pnlOdemeAl.Size = new System.Drawing.Size(385, 165);
+            this.pnlOdemeAl.Size = new System.Drawing.Size(386, 197);
             this.pnlOdemeAl.TabIndex = 21;
             this.pnlOdemeAl.Visible = false;
             // 
@@ -299,6 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(935, 603);
             this.Controls.Add(this.pnlOdemeTip);
             this.Controls.Add(this.pnlPoset);
@@ -311,8 +316,8 @@
             this.Name = "SatısForm";
             this.Text = "SatısForm";
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).EndInit();
-            this.pPesinPanel.ResumeLayout(false);
-            this.pPesinPanel.PerformLayout();
+            this.pnlPesinpanel.ResumeLayout(false);
+            this.pnlPesinpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).EndInit();
             this.pnlOdemeTip.ResumeLayout(false);
             this.pnlOdemeTip.PerformLayout();
@@ -333,9 +338,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nuAdet;
         private System.Windows.Forms.Button btnTamamla;
-        private System.Windows.Forms.RadioButton rdKkartı;
-        private System.Windows.Forms.RadioButton rdPesin;
-        private System.Windows.Forms.Panel pPesinPanel;
+        private System.Windows.Forms.RadioButton rbKkartı;
+        private System.Windows.Forms.RadioButton rbNakit;
+        private System.Windows.Forms.Panel pnlPesinpanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblToplamFiyat;

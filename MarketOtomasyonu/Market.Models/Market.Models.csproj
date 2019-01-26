@@ -61,6 +61,7 @@
     <Compile Include="Enums\OdemeTipi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
+    <Compile Include="ViewModels\MakeSalesViewModel.cs" />
     <Compile Include="ViewModels\MultiProductAcceptViewModel.cs" />
     <Compile Include="ViewModels\MultiProductViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />

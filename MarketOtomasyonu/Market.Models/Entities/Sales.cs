@@ -8,7 +8,7 @@ namespace Market.Models.Entities
     public class Sales: BaseEntity<int>
     {
         public DateTime SaledTime { get; set; } = DateTime.Now;
-        public OdemeTipi OdemeTipi { get; set; }
+        public OdemeTipi PaymentType { get; set; }
         public virtual ICollection<Sales_Detail> SalesDetails { get; set; }=new HashSet<Sales_Detail>();
     }
 }

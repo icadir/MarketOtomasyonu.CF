@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Market.BLL.Repository;
 using Market.Models.Entities;
+using Market.Models.Enums;
+using Market.Models.ViewModels;
 
 namespace Market.WFA.SatısIslemleri
 {
@@ -135,23 +137,23 @@ namespace Market.WFA.SatısIslemleri
                 lstSatılacakurunler.Items.Add(item);
             }
 
-            var tutar = sepet.Sum(x => x.BPrice * x.GPiece);
-            lblToplamFiyat.Text = $"Toplam Fiyat : {tutar:c2}";
-            anatoplam = tutar;
+            anatoplam = sepet.Sum(x => x.BPrice * x.GPiece);
+            lblToplamFiyat.Text = $"Toplam Fiyat : {anatoplam:c2}";
+
         }
 
         private void btnOde_Click(object sender, EventArgs e)
         {
-            pnlOdemeAl.Visible = true;
+          
             pnlBarkod.Visible = false;
             lstSatılacakurunler.Visible = false;
             pnlPoset.Visible = false;
-            pnlOdemeAl.Visible = true;
+            pnlOdemeTip.Visible = true;
 
         }
         private int posetSayisi = 0;
         private decimal posetFiyat;
-     
+
         private void cbPoset_CheckedChanged(object sender, EventArgs e)
         {
             if (cbPoset.Checked == true)
@@ -178,6 +180,76 @@ namespace Market.WFA.SatısIslemleri
             lblToplamFiyat.Text = $"Toplam: {anatoplam:c2}";
         }
 
-        
+        private bool odeme = false;
+
+        private void btnTamamla_Click(object sender, EventArgs e)
+        {
+            if (rbNakit.Checked == true)
+            {
+                if (txtNakit == null || txtNakit.Text == "")
+                {
+                    MessageBox.Show("Lütfen Nakit Girisi Yapınız.");
+                }
+                else
+                {
+                    var GirilenNakit = Convert.ToDecimal(txtNakit.Text);
+                    if (GirilenNakit >= anatoplam)
+                    {
+                        lblParaüstü.Visible = true;
+                        lblParaüstü.Text = $"Para Üstü:{(GirilenNakit - anatoplam):c2}";
+                        odeme = true;
+                    }
+                    else
+                    {
+                        odeme = false;
+                        MessageBox.Show("Girilen Para Yeterli degil.");
+                    }
+                }
+            }
+
+            var rbuttonlar = pnlOdemeTip.Controls.OfType<RadioButton>().ToArray();
+            var odemeIndex = Array.IndexOf(rbuttonlar, rbuttonlar.Single(rb => rb.Checked));
+            if (rbNakit.Checked==true|| rbKkartı.Checked==true)
+            {
+                try
+                {
+                    var doit = new SalesRepo();
+                    var saless = new MakeSalesViewModel
+                    {
+                        BasketModel = sepet,
+                        PaymentType = (OdemeTipi)odemeIndex,
+                        
+                    };
+
+                  var finishim=  doit.MakeSales(saless);
+                  MessageBox.Show($"{finishim} nolu satış yapıldı.");
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Satıs Yaparken Bir hata olustu"+ex.Message);
+                  
+                }
+            }
+
+
+        }
+
+        private void rbNakit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNakit.Checked)
+            {
+                pnlOdemeAl.Visible = true;
+                pnlPesinpanel.Visible = true;
+
+            }
+        }
+
+        private void rbKkartı_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlPesinpanel.Visible = false;
+            pnlOdemeAl.Visible = true;
+        }
     }
 }
