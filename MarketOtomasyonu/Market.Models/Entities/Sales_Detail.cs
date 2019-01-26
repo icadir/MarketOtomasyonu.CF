@@ -9,7 +9,7 @@ namespace Market.Models.Entities
         public decimal STotalPrice { get; set; }
 
         [ForeignKey("Id")]
-        public virtual MultiProduct MultiProduct { get; set; }
+        public virtual Product Product { get; set; }
 
         [ForeignKey("Id2")]
         public virtual Sales Sales { get; set; }

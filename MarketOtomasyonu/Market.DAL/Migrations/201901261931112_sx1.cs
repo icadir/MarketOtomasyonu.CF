@@ -3,7 +3,7 @@ namespace Market.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class c7 : DbMigration
+    public partial class sx1 : DbMigration
     {
         public override void Up()
         {
@@ -58,7 +58,7 @@ namespace Market.DAL.Migrations
                         UBPrice = c.Decimal(nullable: false, precision: 10, scale: 2),
                         UPicture = c.Binary(),
                         Stock = c.Decimal(nullable: false, precision: 7, scale: 0),
-                        PPiece = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        PPiece = c.Decimal(nullable: false, precision: 1, scale: 0),
                         CategoryId = c.Int(nullable: false),
                         PExplanation = c.String(),
                     })
@@ -87,7 +87,7 @@ namespace Market.DAL.Migrations
                         STotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => new { t.Id, t.Id2 })
-                .ForeignKey("dbo.MultiProducts", t => t.Id, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.Id, cascadeDelete: true)
                 .ForeignKey("dbo.Sales", t => t.Id2, cascadeDelete: true)
                 .Index(t => t.Id)
                 .Index(t => t.Id2);
@@ -107,7 +107,7 @@ namespace Market.DAL.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Sales_Detail", "Id2", "dbo.Sales");
-            DropForeignKey("dbo.Sales_Detail", "Id", "dbo.MultiProducts");
+            DropForeignKey("dbo.Sales_Detail", "Id", "dbo.Products");
             DropForeignKey("dbo.MultiProducts", "UrunId", "dbo.Products");
             DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropForeignKey("dbo.AcceptanceDetails", "Id", "dbo.MultiProducts");

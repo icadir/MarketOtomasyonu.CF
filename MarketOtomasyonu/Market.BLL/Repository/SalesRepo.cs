@@ -27,7 +27,7 @@ namespace Market.BLL.Repository
                     {
                         db.SalesDetails.Add(new Sales_Detail
                         {
-                            Id = item.MultiUrunId,
+                            Id = item.UrunId,
                             Id2 = sale.Id,
                             STotalPrice = (item.BPrice * item.GPiece),
                             SPiece = (item.GPiece * item.BPiece),

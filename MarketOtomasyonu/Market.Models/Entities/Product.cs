@@ -10,7 +10,7 @@ namespace Market.Models.Entities
         public string PName { get; set; }
         [Required]
         [Index(IsUnique = true)]
-        [StringLength(5),MinLength(5),MaxLength(5)]
+        [StringLength(5), MinLength(5), MaxLength(5)]
         public string Barkod { get; set; }
         public decimal UBPrice { get; set; }
         public byte[] UPicture { get; set; }
@@ -22,6 +22,6 @@ namespace Market.Models.Entities
         public virtual Category Category { get; set; }
 
         public virtual ICollection<MultiProduct> MultiProducts { get; set; } = new HashSet<MultiProduct>();
-
+        public virtual ICollection<Sales_Detail> SeDetails { get; set; } = new HashSet<Sales_Detail>();
     }
 }

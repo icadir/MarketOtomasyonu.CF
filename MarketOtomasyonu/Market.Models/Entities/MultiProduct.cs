@@ -26,6 +26,6 @@ namespace Market.Models.Entities
 
         public virtual ICollection<AcceptanceDetail> AcceptanceDetails { get; set; } = new HashSet<AcceptanceDetail>();
 
-        public virtual ICollection<Sales_Detail> SeDetails { get; set; } = new HashSet<Sales_Detail>();
+     
     }
 }
