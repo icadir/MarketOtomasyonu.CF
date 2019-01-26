@@ -137,7 +137,7 @@
             // btnProductAdd
             // 
             this.btnProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductAdd.Location = new System.Drawing.Point(177, 162);
+            this.btnProductAdd.Location = new System.Drawing.Point(177, 159);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(138, 40);
             this.btnProductAdd.TabIndex = 9;
@@ -157,7 +157,7 @@
             // btnPictureAdd
             // 
             this.btnPictureAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPictureAdd.Location = new System.Drawing.Point(353, 162);
+            this.btnPictureAdd.Location = new System.Drawing.Point(353, 159);
             this.btnPictureAdd.Name = "btnPictureAdd";
             this.btnPictureAdd.Size = new System.Drawing.Size(145, 40);
             this.btnPictureAdd.TabIndex = 11;
@@ -172,7 +172,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(9, 162);
+            this.btnClose.Location = new System.Drawing.Point(9, 159);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(132, 40);
             this.btnClose.TabIndex = 12;

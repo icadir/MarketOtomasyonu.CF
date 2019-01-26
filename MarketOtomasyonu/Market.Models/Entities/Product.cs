@@ -17,8 +17,7 @@ namespace Market.Models.Entities
         public decimal Stock { get; set; }
         public decimal PPiece { get; set; } = 1;
         public int CategoryId { get; set; }
-
-
+        public string PExplanation { get; set; }
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 

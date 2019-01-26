@@ -58,6 +58,7 @@
     <Compile Include="Repository\MultiProductRepo.cs" />
     <Compile Include="Repository\ProductRepo.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Repository\SalesRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Market.DAL\Market.DAL.csproj">
