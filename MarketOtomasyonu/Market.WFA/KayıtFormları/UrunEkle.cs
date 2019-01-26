@@ -42,7 +42,8 @@ namespace Market.WFA.KayıtFormları
 
                 throw;
             }
-            coklurunform2.cmbProduct.DataSource = ProductHelper.GetAllProduct();
+           var SelectedCategory = coklurunform2.cmbCategory.SelectedItem as CategoryViewModel;
+           coklurunform2.cmbProduct.DataSource = ProductHelper.ProductBroughtBySelectedCategory(SelectedCategory);
             this.Close();
         }
         MemoryStream memoryStream = new MemoryStream();

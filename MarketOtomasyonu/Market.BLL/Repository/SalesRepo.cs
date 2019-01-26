@@ -16,7 +16,7 @@ namespace Market.BLL.Repository
             {
                 try
                 {
-                    var sale = new Sales
+                    var sale = new Sales()
                     {
                         SaledTime = model.SalesDate,
                         PaymentType = model.PaymentType,
@@ -25,18 +25,24 @@ namespace Market.BLL.Repository
                     db.SaveChanges();
                     foreach (var item in model.BasketModel)
                     {
-                        db.SalesDetails.Add(new Sales_Detail
+                        var saleddetail=new Sales_Detail()
                         {
-                            Id = item.UrunId,
-                            Id2 = sale.Id,
+                            UrunId = item.UrunId,
+                            SaleId = sale.Id,
                             STotalPrice = (item.BPrice * item.GPiece),
                             SPiece = (item.GPiece * item.BPiece),
-                        });
+                        };
+                        db.SalesDetails.Add(saleddetail);
+                        db.SaveChanges();
 
+                    }
+                    foreach (var item in model.BasketModel)
+                    {
                         var urun = db.Products.Find(item.UrunId);
                         urun.Stock = urun.Stock - (item.GPiece * item.BPiece);
                         db.SaveChanges();
                     }
+                    
                     tran.Commit();
                     return sale.Id;
 

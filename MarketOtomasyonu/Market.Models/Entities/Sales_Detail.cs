@@ -1,19 +1,27 @@
-﻿using Market.Models.Abstracts;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Market.Models.Abstracts;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Market.Models.Entities
 {
-    public class Sales_Detail:BaseEntity2<int,int>
+    public class Sales_Detail 
     {
         public decimal SPiece { get; set; }
         public decimal STotalPrice { get; set; }
 
-        [ForeignKey("Id")]
-        public virtual Product Product { get; set; }
+        [Key, Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int UrunId { get; set; }
+        [Key, Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int SaleId { get; set; }
 
-        [ForeignKey("Id2")]
-        public virtual Sales Sales { get; set; }
+      
+        public virtual ICollection<Product> Product { get; set; }
         
+        public virtual ICollection<Sales> Sales { get; set; }
+
 
     }
 }

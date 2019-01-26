@@ -36,6 +36,8 @@
             this.rbKkartı = new System.Windows.Forms.RadioButton();
             this.rbNakit = new System.Windows.Forms.RadioButton();
             this.pnlPesinpanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtNakit = new System.Windows.Forms.TextBox();
             this.lblParaüstü = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,8 +51,7 @@
             this.pnlOdemeAl = new System.Windows.Forms.Panel();
             this.pnlBarkod = new System.Windows.Forms.Panel();
             this.pnlPoset = new System.Windows.Forms.Panel();
-            this.txtNakit = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nuAdet)).BeginInit();
             this.pnlPesinpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPoset)).BeginInit();
@@ -156,6 +157,23 @@
             this.pnlPesinpanel.Size = new System.Drawing.Size(409, 86);
             this.pnlPesinpanel.TabIndex = 7;
             this.pnlPesinpanel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(254, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 57);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Nakit Al";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtNakit
+            // 
+            this.txtNakit.Location = new System.Drawing.Point(131, 13);
+            this.txtNakit.Name = "txtNakit";
+            this.txtNakit.Size = new System.Drawing.Size(115, 20);
+            this.txtNakit.TabIndex = 13;
             // 
             // lblParaüstü
             // 
@@ -280,7 +298,7 @@
             this.pnlBarkod.Controls.Add(this.label1);
             this.pnlBarkod.Controls.Add(this.nuAdet);
             this.pnlBarkod.Controls.Add(this.label3);
-            this.pnlBarkod.Location = new System.Drawing.Point(12, 27);
+            this.pnlBarkod.Location = new System.Drawing.Point(12, 98);
             this.pnlBarkod.Name = "pnlBarkod";
             this.pnlBarkod.Size = new System.Drawing.Size(273, 96);
             this.pnlBarkod.TabIndex = 22;
@@ -294,22 +312,15 @@
             this.pnlPoset.Size = new System.Drawing.Size(183, 40);
             this.pnlPoset.TabIndex = 23;
             // 
-            // txtNakit
+            // label5
             // 
-            this.txtNakit.Location = new System.Drawing.Point(131, 13);
-            this.txtNakit.Name = "txtNakit";
-            this.txtNakit.Size = new System.Drawing.Size(115, 20);
-            this.txtNakit.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(254, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 57);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Nakit Al";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(274, 32);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Barko nosu 5 veya 11 haneli olmalıdır. \r\nGirdikten sonra Enter a basınız..";
             // 
             // SatısForm
             // 
@@ -317,6 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(935, 603);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.pnlOdemeTip);
             this.Controls.Add(this.pnlPoset);
             this.Controls.Add(this.pnlBarkod);
@@ -368,5 +380,6 @@
         private System.Windows.Forms.Panel pnlPoset;
         private System.Windows.Forms.TextBox txtNakit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

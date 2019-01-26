@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Market.BLL.Helper
 {
-    public class ProductHelper
+    public static class ProductHelper
     {
         public static object GetAllProduct()
         {
@@ -26,7 +26,6 @@ namespace Market.BLL.Helper
                .Where(x => x.CategoryId == model.CategoryId)
                .Select(x => new ProductViewModel
                {
-                    
                    ProdcutId = x.Id,
                    Barkod = x.Barkod,
                    Category = x.Category,

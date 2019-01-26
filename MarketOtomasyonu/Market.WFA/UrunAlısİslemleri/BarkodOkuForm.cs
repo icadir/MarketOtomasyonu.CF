@@ -49,5 +49,7 @@ namespace Market.WFA.UrunAlısİslemleri
                 }
             }
         }
+
+       
     }
 }
