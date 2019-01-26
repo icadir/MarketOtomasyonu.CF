@@ -6,6 +6,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Market.WFA.UrunAlısİslemleri;
 
 namespace Market.WFA.KayıtFormları
 {
@@ -21,6 +22,8 @@ namespace Market.WFA.KayıtFormları
             cmbCategory.DataSource = CategoryHelper.GetAllCategories();
 
         }
+
+       
         private CategoryViewModel SelectedCategory;
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {

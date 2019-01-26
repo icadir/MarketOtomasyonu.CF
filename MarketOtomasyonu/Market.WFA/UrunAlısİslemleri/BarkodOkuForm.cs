@@ -29,9 +29,11 @@ namespace Market.WFA.UrunAlısİslemleri
                 if (txtBarkod.Text.Length == 11)
                 {
                     var sonuc = new MultiProductRepo().GetAll(x => x.MPBarkod == ara).FirstOrDefault();
+                  
                     if (sonuc==null)
                     {
                         CokluUrunEkle cke = new CokluUrunEkle();
+                        cke.txtBarkod.Text = ara;
                         cke.Show();
                     }
                     else

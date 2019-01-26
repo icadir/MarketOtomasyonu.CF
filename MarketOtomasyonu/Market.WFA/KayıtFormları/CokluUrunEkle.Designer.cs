@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 96);
+            this.label1.Location = new System.Drawing.Point(18, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
@@ -85,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 38);
+            this.label4.Location = new System.Drawing.Point(17, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
             this.label4.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 68);
+            this.label5.Location = new System.Drawing.Point(19, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(128, 30);
+            this.cmbCategory.Location = new System.Drawing.Point(128, 58);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(145, 24);
             this.cmbCategory.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             this.cmbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(128, 60);
+            this.cmbProduct.Location = new System.Drawing.Point(128, 88);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(145, 24);
             this.cmbProduct.TabIndex = 6;
@@ -123,8 +123,9 @@
             // txtBarkod
             // 
             this.txtBarkod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarkod.Location = new System.Drawing.Point(128, 90);
+            this.txtBarkod.Location = new System.Drawing.Point(127, 30);
             this.txtBarkod.Name = "txtBarkod";
+            this.txtBarkod.ReadOnly = true;
             this.txtBarkod.Size = new System.Drawing.Size(145, 22);
             this.txtBarkod.TabIndex = 7;
             // 
@@ -229,7 +230,7 @@
             // btnMCategoryAdd
             // 
             this.btnMCategoryAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMCategoryAdd.Location = new System.Drawing.Point(279, 30);
+            this.btnMCategoryAdd.Location = new System.Drawing.Point(279, 58);
             this.btnMCategoryAdd.Name = "btnMCategoryAdd";
             this.btnMCategoryAdd.Size = new System.Drawing.Size(162, 24);
             this.btnMCategoryAdd.TabIndex = 15;
@@ -240,7 +241,7 @@
             // btnMProductAdd
             // 
             this.btnMProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMProductAdd.Location = new System.Drawing.Point(279, 60);
+            this.btnMProductAdd.Location = new System.Drawing.Point(279, 88);
             this.btnMProductAdd.Name = "btnMProductAdd";
             this.btnMProductAdd.Size = new System.Drawing.Size(162, 24);
             this.btnMProductAdd.TabIndex = 16;
@@ -288,7 +289,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBarkod;
         private System.Windows.Forms.NumericUpDown nuPiece;
         private System.Windows.Forms.NumericUpDown nuPrice;
         private System.Windows.Forms.Label label6;
@@ -301,5 +301,6 @@
         private System.Windows.Forms.Button btnMProductAdd;
         public System.Windows.Forms.ComboBox cmbCategory;
         public System.Windows.Forms.ComboBox cmbProduct;
+        public System.Windows.Forms.TextBox txtBarkod;
     }
 }
