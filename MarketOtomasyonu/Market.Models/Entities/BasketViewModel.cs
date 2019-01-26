@@ -10,7 +10,7 @@
         public string Explanation { get; set; }
         public string ProductName { get; set; }
 
-        public override string ToString() => $"{ProductName} -Fiyat-{BPrice:c2} -- {Explanation}--- Adet :{GPiece}";
+        public override string ToString() => $"{ProductName} -Fiyat-{BPrice:c2} -- {Explanation}--- Adet :{GPiece} tane";
 
     }
 }

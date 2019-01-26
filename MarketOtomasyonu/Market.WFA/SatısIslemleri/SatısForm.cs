@@ -110,7 +110,7 @@ namespace Market.WFA.SatısIslemleri
                                     });
 
                                 }
-                               
+
 
                             }
 
@@ -124,6 +124,7 @@ namespace Market.WFA.SatısIslemleri
             }
         }
 
+        private decimal anatoplam;
         private void SepetHesapla()
         {
             lstSatılacakurunler.Items.Clear();
@@ -134,6 +135,46 @@ namespace Market.WFA.SatısIslemleri
 
             var tutar = sepet.Sum(x => x.BPrice * x.GPiece);
             lblToplamFiyat.Text = $"Toplam Fiyat : {tutar:c2}";
+            anatoplam = tutar;
         }
+
+        private void btnOde_Click(object sender, EventArgs e)
+        {
+            pnlOdemeAl.Visible = true;
+            pnlBarkod.Visible = false;
+            lstSatılacakurunler.Visible = false;
+            pnlPoset.Visible = false;
+
+        }
+        private int posetSayisi = 0;
+        private decimal posetFiyat;
+     
+        private void cbPoset_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPoset.Checked == true)
+            {
+                nuPoset.Visible = true;
+            }
+            else if (cbPoset.CheckState == CheckState.Unchecked)
+                posetSayisi = 0;
+        }
+
+        private void nuPoset_KeyUp(object sender, KeyEventArgs e)
+        {
+            posetSayisi = (int)nuPoset.Value;
+            posetFiyat = Convert.ToDecimal(posetSayisi * 0.25);
+            anatoplam = anatoplam + posetFiyat;
+            lblToplamFiyat.Text = $"Toplam: {anatoplam:c2}";
+        }
+
+        private void nuPoset_ValueChanged(object sender, EventArgs e)
+        {
+            posetSayisi = (int)nuPoset.Value;
+            posetFiyat = Convert.ToDecimal(posetSayisi * 0.25);
+            anatoplam = anatoplam + posetFiyat;
+            lblToplamFiyat.Text = $"Toplam: {anatoplam:c2}";
+        }
+
+        
     }
 }
