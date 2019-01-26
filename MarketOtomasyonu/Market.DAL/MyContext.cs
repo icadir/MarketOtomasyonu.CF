@@ -15,6 +15,8 @@ namespace Market.DAL
         public virtual DbSet<MultiProduct> MultiProducts { get; set; }
         public virtual DbSet<Acceptance> Acceptances { get; set; }
         public virtual DbSet<AcceptanceDetail> AcceptanceDetails { get; set; }
+        public virtual DbSet<Sales> Saleses { get; set; }
+        public virtual DbSet<Sales_Detail> SalesDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
