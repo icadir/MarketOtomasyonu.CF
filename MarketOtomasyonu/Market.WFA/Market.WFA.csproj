@@ -59,6 +59,12 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SatısIslemleri\SatısForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SatısIslemleri\SatısForm.Designer.cs">
+      <DependentUpon>SatısForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UrunAlısİslemleri\BarkodOkuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SatısIslemleri\SatısForm.resx">
+      <DependentUpon>SatısForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrunAlısİslemleri\BarkodOkuForm.resx">
       <DependentUpon>BarkodOkuForm.cs</DependentUpon>
     </EmbeddedResource>
