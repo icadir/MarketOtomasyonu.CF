@@ -49,7 +49,7 @@ namespace Market.WFA.Rapor
                     p.PName,
                     c.CName,
                     sd.SPiece,
-                    p.UBPrice,
+                  
                     sd.STotalPrice,
                     s.PaymentType,
                 }
@@ -63,7 +63,7 @@ namespace Market.WFA.Rapor
                     gp.Key.PName,
                     gp.Key.CName,
                     ToplamAdet = gp.Sum(x => x.sd.SPiece),
-                    gp.Key.UBPrice,
+                
                     gp.Key.STotalPrice,
                     gp.Key.PaymentType
 
