@@ -67,6 +67,7 @@
             this.btnRapor.TabIndex = 2;
             this.btnRapor.Text = "Rapor";
             this.btnRapor.UseVisualStyleBackColor = false;
+            this.btnRapor.Click += new System.EventHandler(this.btnRapor_Click);
             // 
             // AnaForm
             // 

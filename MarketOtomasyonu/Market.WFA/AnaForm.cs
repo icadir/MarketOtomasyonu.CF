@@ -30,6 +30,10 @@ namespace Market.WFA
             brkform.Show();
         }
 
-       
+        private void btnRapor_Click(object sender, EventArgs e)
+        {
+            Rapor.Rapor rp = new  Rapor.Rapor();
+            rp.Show();
+        }
     }
 }

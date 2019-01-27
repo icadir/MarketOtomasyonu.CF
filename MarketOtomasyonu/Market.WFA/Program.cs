@@ -1,12 +1,5 @@
-﻿using Market.WFA.IşlemFormları;
-using Market.WFA.KayıtFormları;
-using Market.WFA.UrunAlısİslemleri;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using Market.WFA.SatısIslemleri;
 
 namespace Market.WFA
 {
@@ -20,7 +13,7 @@ namespace Market.WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaForm());
+            Application.Run(new Rapor.Rapor());
         }
     }
 }
