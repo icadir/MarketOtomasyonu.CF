@@ -32,9 +32,18 @@ namespace Market.BLL.Repository
                             STotalPrice = (item.BPrice * item.GPiece),
                             SPiece = (item.GPiece * item.BPiece),
                         };
-                        db.SalesDetails.Add(saleddetail);
-                        db.SaveChanges();
-
+                        var deneme = db.SalesDetails.FirstOrDefault(x => x.UrunId==item.UrunId);
+                        if (deneme==null)
+                        {
+                            db.SalesDetails.Add(saleddetail);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            deneme.STotalPrice += (item.BPrice * item.GPiece);
+                            deneme.SPiece += (item.GPiece * item.BPiece);
+                            db.SaveChanges();
+                        }          
                     }
                     foreach (var item in model.BasketModel)
                     {

@@ -1,5 +1,6 @@
 ﻿using Market.Models.Entities;
 using System.Data.Entity;
+using Market.DAL.Migrations;
 
 namespace Market.DAL
 {
@@ -44,6 +45,9 @@ namespace Market.DAL
             modelBuilder.Entity<AcceptanceDetail>()
               .Property(x => x.Numberofpieces)
               .HasPrecision(10, 2);
+            modelBuilder.Entity<Sales_Detail>()
+                .Property(x => x.SPiece)
+                .HasPrecision(10, 0);
         }
 
     }

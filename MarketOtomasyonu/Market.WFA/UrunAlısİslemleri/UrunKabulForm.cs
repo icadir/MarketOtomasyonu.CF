@@ -31,7 +31,7 @@ namespace Market.WFA.IşlemFormları
 
         private void FormDoldur(MultiProductViewModel bulunan)
         {
-            txtCategoryName.Text = bulunan.Product.Category.CName;
+     
             txtProductName.Text = bulunan.Product.PName;
             nuPiece.Value = bulunan.MPPiece;
             nuPrice.Value = bulunan.MPPrice;

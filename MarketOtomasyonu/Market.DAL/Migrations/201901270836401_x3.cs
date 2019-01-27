@@ -3,7 +3,7 @@ namespace Market.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class sx9 : DbMigration
+    public partial class x3 : DbMigration
     {
         public override void Up()
         {
@@ -86,7 +86,11 @@ namespace Market.DAL.Migrations
                         SPiece = c.Decimal(nullable: false, precision: 18, scale: 2),
                         STotalPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
-                .PrimaryKey(t => new { t.UrunId, t.SaleId });
+                .PrimaryKey(t => new { t.UrunId, t.SaleId })
+                .ForeignKey("dbo.Products", t => t.UrunId, cascadeDelete: true)
+                .ForeignKey("dbo.Sales", t => t.SaleId, cascadeDelete: true)
+                .Index(t => t.UrunId)
+                .Index(t => t.SaleId);
             
             CreateTable(
                 "dbo.Sales",
@@ -98,58 +102,24 @@ namespace Market.DAL.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.Sales_DetailProduct",
-                c => new
-                    {
-                        Sales_Detail_UrunId = c.Int(nullable: false),
-                        Sales_Detail_SaleId = c.Int(nullable: false),
-                        Product_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Sales_Detail_UrunId, t.Sales_Detail_SaleId, t.Product_Id })
-                .ForeignKey("dbo.Sales_Detail", t => new { t.Sales_Detail_UrunId, t.Sales_Detail_SaleId }, cascadeDelete: true)
-                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
-                .Index(t => new { t.Sales_Detail_UrunId, t.Sales_Detail_SaleId })
-                .Index(t => t.Product_Id);
-            
-            CreateTable(
-                "dbo.SalesSales_Detail",
-                c => new
-                    {
-                        Sales_Id = c.Int(nullable: false),
-                        Sales_Detail_UrunId = c.Int(nullable: false),
-                        Sales_Detail_SaleId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Sales_Id, t.Sales_Detail_UrunId, t.Sales_Detail_SaleId })
-                .ForeignKey("dbo.Sales", t => t.Sales_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Sales_Detail", t => new { t.Sales_Detail_UrunId, t.Sales_Detail_SaleId }, cascadeDelete: true)
-                .Index(t => t.Sales_Id)
-                .Index(t => new { t.Sales_Detail_UrunId, t.Sales_Detail_SaleId });
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.SalesSales_Detail", new[] { "Sales_Detail_UrunId", "Sales_Detail_SaleId" }, "dbo.Sales_Detail");
-            DropForeignKey("dbo.SalesSales_Detail", "Sales_Id", "dbo.Sales");
-            DropForeignKey("dbo.Sales_DetailProduct", "Product_Id", "dbo.Products");
-            DropForeignKey("dbo.Sales_DetailProduct", new[] { "Sales_Detail_UrunId", "Sales_Detail_SaleId" }, "dbo.Sales_Detail");
+            DropForeignKey("dbo.Sales_Detail", "SaleId", "dbo.Sales");
+            DropForeignKey("dbo.Sales_Detail", "UrunId", "dbo.Products");
             DropForeignKey("dbo.MultiProducts", "UrunId", "dbo.Products");
             DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropForeignKey("dbo.AcceptanceDetails", "Id", "dbo.MultiProducts");
             DropForeignKey("dbo.AcceptanceDetails", "Id2", "dbo.Acceptances");
-            DropIndex("dbo.SalesSales_Detail", new[] { "Sales_Detail_UrunId", "Sales_Detail_SaleId" });
-            DropIndex("dbo.SalesSales_Detail", new[] { "Sales_Id" });
-            DropIndex("dbo.Sales_DetailProduct", new[] { "Product_Id" });
-            DropIndex("dbo.Sales_DetailProduct", new[] { "Sales_Detail_UrunId", "Sales_Detail_SaleId" });
+            DropIndex("dbo.Sales_Detail", new[] { "SaleId" });
+            DropIndex("dbo.Sales_Detail", new[] { "UrunId" });
             DropIndex("dbo.Products", new[] { "CategoryId" });
             DropIndex("dbo.Products", new[] { "Barkod" });
             DropIndex("dbo.MultiProducts", new[] { "UrunId" });
             DropIndex("dbo.MultiProducts", "IX_MPUQ");
             DropIndex("dbo.AcceptanceDetails", new[] { "Id2" });
             DropIndex("dbo.AcceptanceDetails", new[] { "Id" });
-            DropTable("dbo.SalesSales_Detail");
-            DropTable("dbo.Sales_DetailProduct");
             DropTable("dbo.Sales");
             DropTable("dbo.Sales_Detail");
             DropTable("dbo.Categories");

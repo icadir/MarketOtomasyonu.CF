@@ -17,10 +17,10 @@ namespace Market.Models.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SaleId { get; set; }
 
-      
-        public virtual ICollection<Product> Product { get; set; }
-        
-        public virtual ICollection<Sales> Sales { get; set; }
+        [ForeignKey("UrunId")]
+        public virtual Product Product { get; set; }
+        [ForeignKey("SaleId")]
+        public virtual Sales Sales { get; set; }
 
 
     }

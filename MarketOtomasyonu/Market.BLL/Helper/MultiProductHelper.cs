@@ -10,7 +10,7 @@ namespace Market.BLL.Helper
         {
             return new MultiProductRepo().GetAll(x => x.MPBarkod == barkod).Select(x => new MultiProductViewModel
             {
-                  MultiProductId=x.Id,
+                MultiProductId=x.Id,
                 MPBarkod = x.MPBarkod,
                 MPPicture = x.MPPicture,
                 MPPiece = x.MPPiece,

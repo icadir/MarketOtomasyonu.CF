@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market.WFA.SatısIslemleri;
 
 namespace Market.WFA
 {
@@ -16,10 +17,11 @@ namespace Market.WFA
         {
             InitializeComponent();
         }
-        
-        private void btnAdds_Click(object sender, EventArgs e)
-        {
 
+        private void btnsales_Click(object sender, EventArgs e)
+        {
+            SatısForm s = new SatısForm();
+            s.Show();
         }
     }
 }
