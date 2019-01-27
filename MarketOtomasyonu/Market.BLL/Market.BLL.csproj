@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Data.cs" />
     <Compile Include="Helper\CategoryHelper.cs" />
     <Compile Include="Helper\EntityHelper.cs" />
     <Compile Include="Helper\MultiProductHelper.cs" />

@@ -78,6 +78,7 @@
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AnaForm";
+            this.Load += new System.EventHandler(this.AnaForm_Load);
             this.ResumeLayout(false);
 
         }
