@@ -20,7 +20,7 @@ namespace Market.WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SatısForm());
+            Application.Run(new AnaForm());
         }
     }
 }

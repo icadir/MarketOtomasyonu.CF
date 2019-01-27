@@ -1,6 +1,6 @@
 ﻿using Market.Models.Entities;
 using System.Data.Entity;
-using Market.DAL.Migrations;
+
 
 namespace Market.DAL
 {

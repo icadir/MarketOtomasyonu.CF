@@ -291,7 +291,7 @@ namespace Market.BLL.Data
                         case 5:
                             multiProduct = new MultiProduct()
                             {
-                                MPBarkod = "11111111115",
+                                MPBarkod = "11111111116",
                                 MPPiece = 30m,
                                 MPPrice = 50m,
                                 MPExplanation = "6x5 = 30 adet ",
@@ -300,6 +300,8 @@ namespace Market.BLL.Data
                             };
                             break;
                     }
+
+                    new MultiProductRepo().Insert(multiProduct);
                 }
 
             }

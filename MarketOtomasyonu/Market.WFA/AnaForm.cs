@@ -2,6 +2,7 @@
 using Market.WFA.SatısIslemleri;
 using System;
 using System.Windows.Forms;
+using Market.WFA.UrunAlısİslemleri;
 
 namespace Market.WFA
 {
@@ -22,5 +23,13 @@ namespace Market.WFA
         {
             new  Data().GenerateData();
         }
+
+        private void btnAdds_Click(object sender, EventArgs e)
+        {
+            BarkodOkuForm brkform= new BarkodOkuForm();
+            brkform.Show();
+        }
+
+       
     }
 }

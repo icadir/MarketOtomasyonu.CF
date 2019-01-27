@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Market.BLL.Repository;
+﻿using Market.BLL.Repository;
 using Market.Models.Entities;
 using Market.Models.Enums;
 using Market.Models.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Market.WFA.SatısIslemleri
 {
@@ -216,7 +214,53 @@ namespace Market.WFA.SatısIslemleri
                         Console.WriteLine("Satıs Yaparken Bir hata olustu" + ex.Message);
 
                     }
+
+
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "PDF File|*.pdf", ValidateNames = true })
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            Document doc = new Document(PageSize.A5.Rotate());
+                            try
+                            {
+                                PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                                doc.Open();
+                                var urunsatis = lstSatılacakurunler.Items;
+
+                                DateTime tarih = DateTime.Now;
+
+                                iTextSharp.text.pdf.BaseFont Courier_Turkish = iTextSharp.text.pdf.BaseFont.CreateFont("Courier", "CP1254", iTextSharp.text.pdf.BaseFont.NOT_EMBEDDED);
+
+                                iTextSharp.text.Font font = new iTextSharp.text.Font(Courier_Turkish, 12, iTextSharp.text.Font.NORMAL);
+
+                                doc.Add(new Paragraph("ÇADIR Toptancılık. \nÜsküdar/ISTANBUL \nMurat Reis Mahallesi, Barbaros Sokak. No:25 Giriş Kat", font));
+                                doc.Add(new Paragraph($"\nFis No:{new SalesRepo().GetAll().Last().Id}\nTarih:{tarih.ToString("dd.MM.yyyy")}\n Saat:{tarih.ToString("HH:mm:ss")}", font));
+                                doc.Add(new Paragraph("\nÜrün adı    \n", font));
+                                foreach (var item in urunsatis)
+                                {
+                                    doc.Add(new Paragraph(item.ToString(), font));
+                                }
+                                doc.Add(new Paragraph($"\nToplam : {lblToplamFiyat.Text:c2}", font));
+                                if (rbNakit.Checked == true)
+                                {
+                                    doc.Add(new Paragraph($"Alınan Miktar: {txtNakit.Text:c2}\nPara Üstü:{lblParaüstü.Text:c2}", font));
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+
+                            finally
+                            {
+                                doc.Close();
+                            }
+                        }
+                    MessageBox.Show("Satış başarılı");
+                    
+
                 }
+
+
             }
            
 

@@ -30,7 +30,7 @@
         {
             this.btnAdds = new System.Windows.Forms.Button();
             this.btnsales = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnRapor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdds
@@ -43,6 +43,7 @@
             this.btnAdds.TabIndex = 0;
             this.btnAdds.Text = "Kategori Kayıt\r\nÜrün Kayıt\r\nÇoklu Ürün Kayıt\r\nÜrün Kabul";
             this.btnAdds.UseVisualStyleBackColor = false;
+            this.btnAdds.Click += new System.EventHandler(this.btnAdds_Click);
             // 
             // btnsales
             // 
@@ -56,23 +57,23 @@
             this.btnsales.UseVisualStyleBackColor = false;
             this.btnsales.Click += new System.EventHandler(this.btnsales_Click);
             // 
-            // button3
+            // btnRapor
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GrayText;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(30, 223);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(227, 101);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Rapor";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRapor.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnRapor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRapor.Location = new System.Drawing.Point(30, 223);
+            this.btnRapor.Name = "btnRapor";
+            this.btnRapor.Size = new System.Drawing.Size(227, 101);
+            this.btnRapor.TabIndex = 2;
+            this.btnRapor.Text = "Rapor";
+            this.btnRapor.UseVisualStyleBackColor = false;
             // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 402);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnRapor);
             this.Controls.Add(this.btnsales);
             this.Controls.Add(this.btnAdds);
             this.Name = "AnaForm";
@@ -87,6 +88,6 @@
 
         private System.Windows.Forms.Button btnAdds;
         private System.Windows.Forms.Button btnsales;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnRapor;
     }
 }
